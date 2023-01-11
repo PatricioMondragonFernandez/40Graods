@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:context=".Galeria"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".Galeria">
+
+        <TextView
+            android:id="@+id/galeriaTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GALERÍA"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:textSize="30sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_cancel_galeria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_baseline_close_24"
+            android:background="@color/zxing_transparent"
+            android:layout_marginTop="30dp"/>
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <ImageButton
+            android:id="@+id/imagen1"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@id/galeriaTV"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/imagen3"
+            android:src="@drawable/imagen1"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline9"/>
+
+        <ImageView
+            android:id="@+id/imagen2"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            app:layout_constraintTop_toBottomOf="@id/galeriaTV"
+            app:layout_constraintStart_toStartOf="@id/guideline10"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/imagen2"
+            app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+        <ImageView
+            android:id="@+id/imagen4"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintTop_toBottomOf="@id/imagen2"
+            app:layout_constraintStart_toStartOf="@id/guideline10"
+            android:src="@drawable/imagen4"
+            app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imagen3"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/imagen1"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            android:src="@drawable/imagen3"
+            app:layout_constraintEnd_toEndOf="@+id/guideline9"/>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imagen5"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/imagen3"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            android:src="@drawable/imagen5"
+            app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imagen6"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/imagen5"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            android:src="@drawable/imagen6"
+            app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/imagen7"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/imagen6"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/imagen7"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline12"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

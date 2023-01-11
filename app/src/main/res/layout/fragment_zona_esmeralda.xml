@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/figura_fragment_codigo_qr"
+    android:backgroundTint="#F3F3F3"
+    tools:context=".fragmentZonaEsmeralda">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zona Esmeralda"
+        android:textColor="#961A1A"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="@id/guideline23" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Estado de Mexico)"
+        android:textColor="#961A1A"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guideline42" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Av. Adolfo Ruiz Cortines 247. Lomas de Atizapan, 52977 Cd López Mateos, Estado de México. México"
+        android:textColor="@color/mdtp_dark_gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline28"
+        app:layout_constraintStart_toStartOf="@+id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guideline27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/abrBtnZonaEsmeralda"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="ABRIR EN GOOGLE MAPS"
+        android:textColor="#961A1A"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline30"
+        app:layout_constraintStart_toStartOf="@id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guideline29"
+        app:strokeColor="#961A1A"
+        app:strokeWidth="1.5dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/abrBtnWazeZonaEsmeralda"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="ABRIR EN WAZE"
+        android:textColor="#961A1A"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/guideline30"
+        app:layout_constraintStart_toStartOf="@id/guideline24"
+        app:layout_constraintTop_toTopOf="@+id/guidelineZona"
+        app:strokeColor="#00FFFF"
+        app:strokeWidth="1.5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineZona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

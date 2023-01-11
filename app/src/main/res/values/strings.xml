@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">Hot Yoga</string>
+    <string name="no_account">¿Don´t have an account? Click Here to <b>Signup</b></string><!--make Signup bold-->
+    //Items del drop down
+    <string-array name="Arreglo_de_horarios">
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+
+    </string-array>
+    //Items del drop down de lugares
+    <string-array name="Arreglo_de_localizaciones">
+        <item>Lugar 1</item>
+        <item>Lugar 2</item>
+        <item>Lugar 3</item>
+    </string-array>
+    //Items del drop down de Actividades
+    <string-array name="Arreglo_de_Actividades">
+        <item>Actividad 1</item>
+        <item>Actividad 1</item>
+        <item>Actividad 1</item>
+    </string-array>
+
+    <string-array name="Areglo_Salones">
+        <item>Salón caliente</item>
+        <item>Salón tradicional</item>
+    </string-array>
+
+    <string-array name="Opciones">
+        <item>Opciones</item>
+        <item>Ver Paquete</item>
+        <item>Log out</item>
+
+    </string-array>
+
+    <string-array name="Salones">
+        <item>Caliente</item>
+        <item>Tradicional</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="DescripcionConocenos"> El yoga logra generar disciplina, energía y la capacidad de superar tus propias limitaciones, más rápido y más fácilmente, a quien lo practica. El yoga es mucho más que hacer ejercicio en un mat.\n\n
+
+La práctica del yoga te lleva gradualmente a utilizar no sólo el cuerpo, sino también la mente y la propia energía de la mejor manera posible, esto te lleva a utilizar todo tu potencial.  Por este motivo, absolutamente todo lo que hacemos, desde la simple comunicación con otras personas hasta la implementación de grandes proyectos, puede adquirir una mejor calidad y profundidad.\n\n
+
+En nuestras clases la respiración es una parte importante de la lección.  Y está directamente relacionado con el trabajo y estado del sistema nervioso.\n\n
+
+Practicando en nuestro salón caliente encontraras una combinación de fitness, spa y desintoxicación.\n\n
+El hot yoga te permite relajarte por completo, despejar la mente y aliviar el estrés.\n\n
+La alta temperatura y la humedad en la sala te obligan a concentrarte en respirar, en las palabras del maestro y en realizar las posturas.\n\n
+Aquí en 40 grados hot yoga, te familiarizarás con varias prácticas y podrás encontrar la que más te guste.\n\n
+
+ ¡Gracias por recorrer este camino con nosotros y compartir tu energía!
+</string>
+
+
+    <string name="AntiGravity">Aerostretching - es un estiramiento y fortalecimiento de los músculos del cuerpo usando paños que cuelgan en el aire como equipo deportivo. Este conjunto de ejercicios ayudará a estirar la columna vertebral, fortalecer los músculos de la espalda, abrir el pecho y ejercitar las articulaciones de los hombros. En esta clase lograras un estiramiento total de todo el cuerpo.</string>
+
+    <string name="YogaKids">Yoga kids es yoga tradicional para los menores de edad que quieran comenzar a practicar yoga. Ayuda a mejorar la postura. Se realiza en el salón tradicional y se pueden llegar a ocupar las hamacas de Antigravity con los pequeños.</string>
+    <string name="Bikram">Bikram 60 y Bikram 90 son el mismo tipo de yoga,.. Bikram Yoga es una variante de Hatha Yoga. La técnica consiste en una combinación de posturas que engloba los beneficios de distintos tipos de yoga, haciendo breves pausas entre postura y postura para alinear tu cuerpo. Durante la clase se desarrolla una secuencia de 26 posturas que se repiten dos veces y 2 ejercicios de respiración que se realizan en una habitación con calor. La diferencia con Bikram 60, es únicamente la duración de la clase y no se repiten todas las 26 posturas, solo algunas.\n\n
+    Durante de clase, las palabras del maestro son como un mantra, conectan la mente y el cuerpo, la atención se centra en la respiración y la realización de asanas.  Esto es literalmente 90 o 60 minutos de meditación en movimiento.
+    </string>
+
+    <string name="dummyText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <string name="SalonTradicional">Es un salón acondicionado para la práctica de las diferentes disciplinas del yoga, como Antigravity, Hatha y Yoga Kids, todas ellas a temperatura ambiente.</string>
+
+    <string name="SalonCaliente">¿Cómo funciona el Salón Caliente?… Es un salón especialmente climatizado a 40 grados de temperatura y 40% de humedad. Que ayuda a estirar y calentar los músculos de manera segura y poder profundizar más en los asanas.</string>
+    <string name="YogaWheel">La rueda de yoga es la pieza clave en tu equipo…se utiliza para ayudarte con diferentes asanas y ejercicios inspirados en el yoga.\n\n
+Las ruedas de yoga se han vuelto cada vez más populares porque se pueden usar para estirar y relajar los músculos de la espalda, el cuello y los hombros, así como los flexores profundos de la cadera. También se pueden utilizar para mejorar las líneas correctas en las posturas de equilibrio desafiantes.
+</string>
+    <string name="HotVinyasa">El Vinyasa Yoga es un estilo de yoga dinámico y fluido, basado en la sincronización de la respiración con los movimientos del cuerpo. La respiración es clave en esta práctica.
+ Esta modalidad de yoga se ordena en varias secuencias de posturas de yoga unidas entre sí. A lo largo de la práctica, las posiciones se desarrollan a través de la respiración.
+</string>
+    <string name="HotTrx">Las clases de 40 grades TRX, o los entrenamientos de suspensión, están diseñados para ejercitar nuestro cuerpo a través del uso del peso corporal. No sólo se ejercita la fuerza, sino que también se mejora la flexibilidad y equilibrio. Si se añade una temperatura 40º a la ecuación, lograrás una mayor elasticidad, depuración y número de calorías quemadas.</string>
+    <string name="HotRocket">Es una variación de Ashtanga Vinyasa Yoga, con menos respiraciones en cada postura. En Hot Rocket se estimula el sistema nervioso, mejorando fuerza y flexibilidad. Su ritmo es dinámico e incluye también invertidas y posturas de equilibrio.</string>
+    <string name="Hatha">Hatha es un estilo clásico de posturas y técnicas de respiración. Su objetivo es crear un equilibrio entre las energías masculinas y femeninas que existen dentro de nosotros mismos. Además, también se utilizan las posturas de yoga para lograr el equilibrio entre la fuerza y la flexibilidad.
+Para realizar una buena práctica de Hatha yoga, debemos cumplir tres requisitos: posturas físicas, técnicas de respiración, meditación.
+</string>
+
+    <string name="Galeria">Galería</string>
+    <string name="AM">AM</string>
+    <string name="PM">PM</string>
+    <string name="HOT">HOT</string>
+    <string name="VINYASA">VINYASA</string>
+    <string name="BIKRAM">BIKRAM</string>
+    <string name="sesente">60</string>
+    <string name="TRX">TRX</string>
+    <string name="ROCKET">ROCKET</string>
+    <string name="Yoga">YOGA</string>
+    <string name="WHEEL">WHEEL</string>
+    <string name="HATHA">HATHA</string>
+    <string name="ANTI">ANTI</string>
+    <string name="GRAVITY">GRAVITY</string>
+    <string name="KIDS">KIDS</string>
+    <string name="Salon">Salón</string>
+    <string name="Caliente">Caliente</string>
+    <string name="tradicional">Tradicional</string>
+    <string name="Horarios">HORARIOS</string>
+    <string name="Domingo">DOMINGO</string>
+    <string name="diez">10:00 AM</string>
+    <string name="reservaciones">Reservaciones (55) 4355 5794</string>
+    <string name="paquetesTv">Estimado Alumno para tu comodidad los pagos de paquetes pueden ser realizados directamente es nuestro estudio a través de los siguientes métodos: Efectivo, Tarjeta bancaria o Transferencia.</string>
+    <string name="powerWheel">Es una clase de 60 minutos donde saldrás de tu zona de confort trabajando todos los músculos de tu cuerpo y todo esto para la mejora de tu práctica de yoga !!!\n\n
+        Aquí ganarás FUERZA , MOVILIDAD, EQUILIBRÓ y FLEXIBILIDAD!!!</string>
+</resources>

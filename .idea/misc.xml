@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/boton_registrarse.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/botton_login.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/disenio_dias.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/disenio_fragment_conocenos.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/figura_fragment_codigo_qr.xml" value="0.1685" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/fondo_fechas.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/fondolayout.xml" value="0.1685" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.15" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_actividad_mapa_zona_esmeralda.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_borrar_cuenta.xml" value="0.2" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_conocenos.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_galeria.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_home_gimnasio.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_horarios.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_nuestras_clases.xml" value="0.2" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_paquetes.xml" value="0.2" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_sign_up.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/activity_ubicaciones.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen1.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen2.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen3.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen4.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen5.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen6.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/d_imagen7.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/dialog_menu.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/fragment_bienvenido_.xml" value="0.264" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/fragment_palmas.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/fragment_reservar_clase.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/fragment_ver_clases_reservadas.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/item_clase.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/layout/item_clase_reservada.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/menu/menu_main.xml" value="0.25" />
+        <entry key="..\:/Users/OMEN/40grados/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

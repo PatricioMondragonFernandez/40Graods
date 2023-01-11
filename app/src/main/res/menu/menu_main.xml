@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_ver_paquete"
+        android:title="Ver Paquete"
+        android:icon="@drawable/verpaquete"/>
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Log Out"
+        android:icon="@drawable/logout"/>
+
+    <item
+        android:id="@+id/menu_salones"
+        android:title="Salones"
+        android:icon="@drawable/salones"/>
+
+    <item
+        android:id="@+id/menu_Horarios"
+        android:title="Horarios"
+        android:icon="@drawable/horarios"/>
+    <item
+        android:id="@+id/menu_Ubicanos"
+        android:title="Ubícanos"
+        android:icon="@drawable/ubicanos"/>
+
+</menu>

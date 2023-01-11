@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".NuestrasClases">
+
+
+    <ImageView
+        android:id="@+id/imVClases"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/hotvinyasa"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineNuestrasClases1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineNuestrasClases2"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineNuestrasClases3"
+        app:layout_constraintStart_toStartOf="@+id/guidelineNuestrasClases4"
+        app:layout_constraintTop_toTopOf="@id/guidelineNuestrasClases1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBikram"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="Bikram"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"
+                app:layout_constraintEnd_toStartOf="@+id/btnYogaWheel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnYogaWheel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20px"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="Yoga Wheel"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"
+                app:layout_constraintStart_toEndOf="@+id/btnBikram" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHotTRX"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20px"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="TRX"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"
+                app:layout_constraintStart_toEndOf="@+id/btnYogaWheel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAntiGravityN"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20px"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="Anti Gravity"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"
+                app:layout_constraintStart_toEndOf="@+id/btnHotTRX" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPowerWheel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20px"
+                android:stateListAnimator="@null"
+                android:backgroundTint="@color/white"
+                android:text="Power Wheel"
+                app:layout_constraintStart_toEndOf="@id/btnAntiGravityN"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnYogaKids"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20px"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="Yoga Kids"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"
+                app:layout_constraintEnd_toStartOf="@id/btnBikram" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHotVinyasa"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20px"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"
+                android:text="Hot Vinyasa"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="30dp"
+                app:layout_constraintEnd_toStartOf="@id/btnYogaKids"
+                tools:layout_editor_absoluteY="0dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHatha"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20px"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"
+                android:text="Hatha"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="30dp"
+                app:layout_constraintStart_toEndOf ="@id/btnPowerWheel"
+                tools:layout_editor_absoluteY="0dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </HorizontalScrollView>
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guidelineNuestrasClases1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineNuestrasClases4"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineNuestrasClases2"
+        android:src="@drawable/arrowback"/>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineNuestraClase5"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineNuestrasClases3"
+        app:layout_constraintStart_toStartOf="@id/guidelineNuestrasClases4"
+        app:layout_constraintTop_toTopOf="@+id/guidelineNuestrasClases2">
+
+        <TextView
+            android:id="@+id/tvNuestrasClases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mdtp_dark_gray"
+            android:text="@string/HotVinyasa"
+            android:textSize="20dp"/>
+
+
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/guidelineNuestrasClases1"
+        app:layout_constraintStart_toStartOf="@id/guidelineNuestrasClases3"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineNuestrasClases2"
+        android:src="@drawable/arrowback"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNuestrasClases"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineNuestrasClases3"
+        app:layout_constraintStart_toStartOf="@id/guidelineNuestrasClases4"
+        app:layout_constraintTop_toTopOf="@id/guidelineNuestraClase5"
+        app:cornerRadius="30dp"
+        android:backgroundTint="@color/white"
+        app:strokeWidth="1dp"
+        android:text="reservar"
+        app:strokeColor="#961A1A"/>
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNuestrasClases1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNuestrasClases2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNuestrasClases3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNuestrasClases4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineNuestraClase5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
