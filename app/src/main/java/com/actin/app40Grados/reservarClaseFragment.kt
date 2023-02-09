@@ -1,5 +1,6 @@
 package com.actin.app40Grados
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -67,6 +68,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
     }
 
     //Ejecuta codigo cuando se selecciona una fecha
+    @SuppressLint("SuspiciousIndentation")
     fun onDateSelected(day: Int, month: Int, year: Int) {
         val month1 = String.format("%02d", month + 1)
         val day1 = String.format("%02d", day)
@@ -75,7 +77,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
         dayString = simpleDateFormat.format(date)
             FechaET.setText("$year/$month1/$day1")
 
-            if (dropdownmenu.text.toString() == "Salón caliente") {
+            if (dropdownmenu.text.toString() == "Clase con calor") {
                 CoroutineScope(Dispatchers.IO).launch {
                     try{
                         listaClases.clear()
@@ -154,7 +156,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
                     }
                 }
 
-            } else if (dropdownmenu.text.toString() == "Salón tradicional") {
+            } else if (dropdownmenu.text.toString() == "Clase sin calor") {
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
                         listaClases.clear()
@@ -235,10 +237,10 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
     }
 
     fun onItemSelected(Clase: Clases) {
-        if (dropdownmenu.text.toString() == "Salón caliente") {
+        if (dropdownmenu.text.toString() == "Clase con calor") {
             val dialog = reservarClaseDialog(Clase, "2")
             dialog.show(parentFragmentManager, "reservarclasedialog")
-        } else if (dropdownmenu.text.toString() == "Salón tradicional") {
+        } else if (dropdownmenu.text.toString() == "Clase sin calor") {
             val dialog = reservarClaseDialog(Clase, "1")
             dialog.show(parentFragmentManager, "reservarclasedialog")
         }

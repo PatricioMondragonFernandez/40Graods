@@ -45,6 +45,10 @@
         <item name="android:popupElevation">8dp</item>
     </style>
 
+    <style name="changeBackgroundColor1" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="colorSurface">#FFFFFF</item>
+    </style>
+
 
 
 </resources>

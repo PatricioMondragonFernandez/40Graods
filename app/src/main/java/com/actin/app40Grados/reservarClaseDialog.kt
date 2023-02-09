@@ -58,6 +58,10 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
                                     scheduleNotification()
                                 }else if(msg == "El Registro se guardo correctamente El usuario no cuenta con paquete asignado"){
                                     Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
+
+                                }else if(msg == "El Registro se guardo correctamente El ultimo paquete registrado ha expirado"){
+                                    Toast.makeText(context, "El Registro se guardo correctamente El ultimo paquete registrado ha expirado", Toast.LENGTH_SHORT).show()
+
                                 }else{
                                     Toast.makeText(context, "No pudo hacerse la reservación es posible que no cuentes con un paquete asignado o ya tengas una reservación para esa clase.", Toast.LENGTH_LONG).show()
                                 }

@@ -5,6 +5,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.fragment.app.activityViewModels
+import com.actin.app40Grados.ViewModel.ViewModelClasesReservadas
 import com.actin.app40Grados.model.clasesReservadas
 import kotlinx.coroutines.*
 import org.json.JSONObject

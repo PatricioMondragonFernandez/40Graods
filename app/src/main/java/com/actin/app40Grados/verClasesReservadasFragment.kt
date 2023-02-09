@@ -25,6 +25,7 @@ import java.util.*
 
 class verClasesReservadasFragment : Fragment() {
     private lateinit var listaClases:MutableList<clasesReservadas>
+    private lateinit var lista2:MutableList<clasesReservadas>
     private lateinit var clasesRecyclerview: RecyclerView
     private lateinit var textView: TextView
     private lateinit var dayString: String
@@ -39,6 +40,7 @@ class verClasesReservadasFragment : Fragment() {
         clasesRecyclerview = view.findViewById<RecyclerView>(R.id.recyclerviewClasesReservadas)
 
         listaClases = mutableListOf<clasesReservadas>()
+        lista2 = mutableListOf<clasesReservadas>()
 
         textView = view.findViewById<TextView>(R.id.noClasesTv)
 
@@ -49,7 +51,6 @@ class verClasesReservadasFragment : Fragment() {
         clasesReservadasViewModel.clasesReservadasModel.observe(viewLifecycleOwner, androidx.lifecycle.Observer { lista ->
             clasesRecyclerview.layoutManager = LinearLayoutManager(context)
             clasesRecyclerview.setHasFixedSize(false)
-            var lista2 = mutableListOf<clasesReservadas>()
             for (i in (0 until lista.size)){
                 if (lista[i].mostrar == 1){
                     lista2.add(lista[i])
@@ -101,7 +102,6 @@ class verClasesReservadasFragment : Fragment() {
     private fun onItemSelected(Clase: clasesReservadas) {
         val dialog = cancelarReservacionDialog(Clase)
         dialog.show(parentFragmentManager, "Cancelar Reservacion Dialog")
-        llamadaApi()
     }
 
     override fun onResume() {
@@ -172,6 +172,7 @@ class verClasesReservadasFragment : Fragment() {
                     clasesReservadasViewModel.addClases(listaClases)
                 }else{
                     withContext(Dispatchers.Main){
+                        lista2.clear()
                         listaClases.clear()
                         textView.visibility = View.VISIBLE
                     }

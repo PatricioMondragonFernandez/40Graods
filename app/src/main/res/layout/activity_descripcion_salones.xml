@@ -32,7 +32,7 @@
         android:id="@+id/btnSalones"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/boton_caliente"
+        android:src="@drawable/boton_con_calor"
         android:scaleType="fitXY"
         android:backgroundTint="@color/white"
         app:layout_constraintTop_toTopOf="@id/guidelineUbicaciones2"

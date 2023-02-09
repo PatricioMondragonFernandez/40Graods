@@ -16,16 +16,14 @@ class DescripcionSalones : AppCompatActivity() {
         binding.btnSalones.setOnClickListener {
             contador += 1
             if ( contador%2 == 0){
-                binding.btnSalones.setImageResource(R.drawable.boton_caliente)
+                binding.btnSalones.setImageResource(R.drawable.boton_con_calor)
                 binding.imViewSalones.setImageResource(R.drawable.salon_caliente)
                 binding.tVSalones.text = getString(R.string.SalonCaliente)
-            }else{
-                binding.btnSalones.setImageResource(R.drawable.boton_tradicional)
+            }else {
+                binding.btnSalones.setImageResource(R.drawable.boton_sin_calor)
                 binding.imViewSalones.setImageResource(R.drawable.salon_tradicional)
                 binding.tVSalones.text = getString(R.string.SalonTradicional)
             }
-
-
         }
 
         binding.btnCloseSalones.setOnClickListener {

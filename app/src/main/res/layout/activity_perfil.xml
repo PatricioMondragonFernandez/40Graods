@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.actin.app40Grados.Perfil">
+
+
+  <TextView
+      android:id="@+id/btnPerfil"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/perfil"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toTopOf="parent"
+      android:textSize="25dp"
+      android:layout_marginTop="25dp"/>
+  <ImageButton
+      android:id="@+id/btnRegresar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="30dp"
+      android:src="@drawable/ic_baseline_close_24"
+      android:backgroundTint="@color/white"/>
+
+  <TextView
+      android:id="@+id/correoTv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/correo"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@id/btnPerfil"
+      android:textSize="15dp"
+      android:layout_marginTop="20dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/crreoTIL"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      app:boxCornerRadiusBottomEnd="30dp"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/correoTv">
+
+    <EditText
+        android:id="@+id/correoEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="\@email.com"
+        android:textColorHint="@color/primario"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+  <Button
+      android:id="@+id/btnValidar"
+      android:layout_width="0dp"
+      android:background="@drawable/botton_login"
+      android:textColor="@color/white"
+      android:text="Validar"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/crreoTIL"/>
+
+  <TextView
+      android:id="@+id/ingresaDatosTv"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:textSize="18dp"
+      android:visibility="gone"
+      android:layout_marginEnd="10dp"
+      android:layout_marginStart="10dp"
+      android:textColor="@color/primario"
+      android:text="@string/ingresaDatos"
+      app:layout_constraintTop_toBottomOf="@id/btnValidar"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      android:maxLines="2"
+      android:layout_marginTop="10dp"/>
+
+
+  <TextView
+      android:id="@+id/nombre"
+      android:layout_width="wrap_content"
+      android:visibility="gone"
+      android:layout_height="wrap_content"
+      android:text="Nombre"
+      android:layout_marginStart="10dp"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@id/ingresaDatosTv"
+      android:textSize="15dp"
+      android:layout_marginTop="25dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/nombreTIL"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      app:boxCornerRadiusBottomEnd="30dp"
+      android:visibility="gone"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/nombre">
+
+    <EditText
+        android:id="@+id/nombreEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre Completo"
+        android:textColorHint="@color/primario"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <TextView
+      android:id="@+id/telefonoTv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Teléfono"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@+id/nombreTIL"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      android:layout_marginTop="15dp"
+      android:layout_marginStart="10dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/telefonoTIL"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      app:boxCornerRadiusBottomEnd="30dp"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      android:visibility="gone"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/telefonoTv">
+
+    <EditText
+        android:id="@+id/telefonoEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de Teléfono"
+        android:inputType="numberPassword"
+        android:maxLength="10"
+        android:textColorHint="@color/primario"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+
+  <TextView
+      android:id="@+id/fechaN"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      android:text="@string/FechaNacimiento"
+      app:layout_constraintTop_toBottomOf="@id/telefonoTIL"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      android:layout_marginTop="20dp"/>
+
+  <TextView
+      android:id="@+id/dia"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/fechaN"
+      android:text="Día"
+      android:visibility="gone"
+      android:maxLines="1"
+      app:layout_constraintEnd_toEndOf="@+id/guideline50"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      android:layout_marginStart="15dp"
+      android:layout_marginTop="25dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/diaTIL"
+      style="@style/changeBackgroundColor1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      android:visibility="gone"
+      app:boxCornerRadiusBottomEnd="30dp"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:hintEnabled="false"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline50"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/dia">
+
+    <AutoCompleteTextView
+
+        android:id="@+id/diaACTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:textColor="#961A1A"
+        android:textColorHint="#961A1A"
+        android:inputType="none">
+
+    </AutoCompleteTextView>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <TextView
+      android:id="@+id/mes"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/fechaN"
+      android:text="Mes"
+      android:visibility="gone"
+      android:maxLines="1"
+      android:layout_marginStart="15dp"
+      app:layout_constraintStart_toStartOf="@id/guideline50"
+      android:layout_marginTop="25dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/mesTIL"
+      style="@style/changeBackgroundColor1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      android:visibility="gone"
+      app:boxCornerRadiusBottomEnd="30dp"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:boxStrokeWidth="0dp"
+      app:hintEnabled="false"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="10dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline51"
+      app:layout_constraintStart_toStartOf="@id/guideline50"
+      app:layout_constraintTop_toBottomOf="@+id/mes">
+
+    <AutoCompleteTextView
+
+        android:id="@+id/mesACTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:textColor="#961A1A"
+        android:textColorHint="#961A1A"
+        android:inputType="none">
+
+    </AutoCompleteTextView>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <TextView
+      android:id="@+id/ano"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/fechaN"
+      android:text="Año"
+      android:maxLines="1"
+      android:visibility="gone"
+      android:layout_marginStart="15dp"
+      app:layout_constraintStart_toStartOf="@id/guideline51"
+      android:layout_marginTop="25dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/anoTIL"
+      style="@style/changeBackgroundColor1"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      app:boxCornerRadiusBottomEnd="30dp"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      android:visibility="gone"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:hintEnabled="false"
+      android:layout_marginEnd="10dp"
+      android:layout_marginStart="10dp"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@id/guideline51"
+      app:layout_constraintTop_toBottomOf="@+id/ano">
+
+    <AutoCompleteTextView
+        android:id="@+id/anoACTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:textColor="#961A1A"
+        android:textColorHint="#961A1A"
+        android:inputType="none">
+    </AutoCompleteTextView>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+
+  <TextView
+      android:id="@+id/constrasenanuevaTv"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/contrasenaNueva"
+      android:visibility="gone"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@id/diaTIL"
+      android:textSize="15dp"
+      android:layout_marginTop="20dp"/>
+
+  <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/contrasenaNTIL"
+      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColorHint="@color/primario"
+      app:boxBackgroundColor="#94999999"
+      app:boxCornerRadiusBottomEnd="30dp"
+      android:visibility="gone"
+      app:boxCornerRadiusBottomStart="30dp"
+      app:boxCornerRadiusTopEnd="30dp"
+      app:boxCornerRadiusTopStart="30dp"
+      app:boxStrokeColor="@color/white"
+      app:boxStrokeWidth="0dp"
+      app:boxStrokeWidthFocused="0dp"
+      app:helperText=""
+      app:helperTextTextColor="@android:color/holo_red_dark"
+      app:hintTextAppearance="@style/estilosTIL"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintTop_toBottomOf="@+id/constrasenanuevaTv">
+
+    <EditText
+        android:id="@+id/constrasenaNEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nueva Contraseña"
+        android:textColorHint="@color/primario"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="196dp" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+  <Button
+      android:id="@+id/btnActualizar"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@id/contrasenaNTIL"
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      android:text="Actualizar"
+      android:background="@drawable/botton_login"
+      android:textColor="@color/white"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      android:layout_marginTop="20dp"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline48"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.05"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline49"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.95"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline52"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.11"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline50"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.34"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline53"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.43"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline51"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.64"/>
+
+  <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline54"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.72"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

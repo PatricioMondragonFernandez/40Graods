@@ -108,6 +108,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             val btnNuestrasClases = view.findViewById<Button>(R.id.btnNuestrasClases)
             val btnGaleria = view.findViewById<Button>(R.id.btnGaleria)
             val btnEliminarCuenta = view.findViewById<Button>(R.id.eliminarCuenta)
+            val btnPerfil = view.findViewById<Button>(R.id.btnPerfil)
 
             btnHorarios.setOnClickListener {
                 startActivity(Intent(this, horarios::class.java))
@@ -138,7 +139,9 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             btnEliminarCuenta.setOnClickListener {
                 startActivity(Intent(this, BorrarCuenta::class.java))
             }
-
+            btnPerfil.setOnClickListener {
+                startActivity(Intent(this, Perfil::class.java))
+            }
         }
         binding.nombreTv.setText(prefs.getName())
     }

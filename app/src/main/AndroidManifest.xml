@@ -25,9 +25,15 @@ package="app40grados">
         android:name="com.actin.app40Grados.Galeria"
         android:exported="false" />
 
-    <activity android:name="com.actin.app40Grados.BorrarCuenta"
+    <activity
+        android:name="com.actin.app40Grados.BorrarCuenta"
+        android:exported="false"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.actin.app40Grados.Perfil"
         android:exported="false"
         android:screenOrientation="portrait"/>
+
     <activity
         android:name="com.actin.app40Grados.NuestrasClases"
         android:exported="false"
@@ -87,6 +93,4 @@ package="app40grados">
 </application>
 
 </manifest>
-
-
 
