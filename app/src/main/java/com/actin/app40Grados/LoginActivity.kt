@@ -97,6 +97,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
                 val datosDelUsuario = datos.toString()
+                println(datosDelUsuario)
                 val jsonObject = JSONObject(datosDelUsuario)
 
                 //quicklogin(correo, contraseña)
@@ -108,12 +109,21 @@ class LoginActivity : AppCompatActivity() {
                     var TIPO = jsonObject.getString("TIPO")
                     var ORIGEN = jsonObject.getString("ORIGEN")
                     val ID = jsonObject.getString("ID")
+                    val telefono = jsonObject.getString("TELEFONO")
+                    val arrayAnuncio = jsonObject.getJSONArray("ANUNCIOS")
+                    val anuncio = arrayAnuncio.getJSONObject(0)
+                    val urlAnuncio = anuncio.getString("ANUNCIO")
                     prefs.saveName(NOMBRE)
                     prefs.saveCorreo(CORREO)
                     prefs.saveCIA(CIA)
+                    prefs.saveTelefono(telefono)
                     prefs.saveID(ID)
                     this@LoginActivity.runOnUiThread(java.lang.Runnable{
-                        startActivity(Intent(this@LoginActivity, HomeGimnasio::class.java))
+                        if (urlAnuncio != ""){
+                            startActivity(Intent(this@LoginActivity, HomeGimnasio::class.java).putExtra("valorPromo", "1").putExtra("promo", urlAnuncio))
+                        }else{
+                            startActivity(Intent(this@LoginActivity, HomeGimnasio::class.java).putExtra("valorPromo", "0"))
+                        }
                     })
                 }else {
                     this@LoginActivity.runOnUiThread(java.lang.Runnable{

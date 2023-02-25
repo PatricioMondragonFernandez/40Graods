@@ -101,6 +101,10 @@ class BienvenidoFragment : Fragment() {
                     activity?.runOnUiThread(java.lang.Runnable{
                         textViewClasesRestantes.text = "No tienes un paquete registrado."
                     })
+                }else if(clasesRestantes == "Paquete ilimitado o de autopago"){
+                    activity?.runOnUiThread(java.lang.Runnable{
+                        textViewClasesRestantes.text = "$paquete"
+                    })
                 }else{
                     activity?.runOnUiThread(java.lang.Runnable{
                         textViewClasesRestantes.text = "Te quedan $clasesRestantes clases de tu Paquete: $paquete"
@@ -108,6 +112,7 @@ class BienvenidoFragment : Fragment() {
                 }
             }catch (ex: Exception){
                 withContext(Dispatchers.Main){
+                    println(ex)
                     Toast.makeText(context, "Error Mostrando el paquete, revisa tu conexión.", Toast.LENGTH_SHORT).show()
                 }
             }

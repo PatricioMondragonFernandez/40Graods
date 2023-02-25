@@ -81,26 +81,26 @@ class horarios : AppCompatActivity() {
                             binding.M7A.setBackgroundResource(R.drawable.power_wheel)
                         }
                         }
-                        }"08:00 am - 09:00 am"->{
+                        }"09:00 am - 10:00 am"->{
                         when(listaClasesSemana[i].nombreClase){
                             "BIKRAM 60 min." ->{
-                                binding.M8A.setBackgroundResource(R.drawable.bikram60)
+                                binding.M9A.setBackgroundResource(R.drawable.bikram60)
                             }"HOT VINYASA" ->{
-                            binding.M8A.setBackgroundResource(R.drawable.hotvinyasac)
+                            binding.M9A.setBackgroundResource(R.drawable.hotvinyasac)
                         }"HATHA"->{
-                            binding.M8A.setBackgroundResource(R.drawable.hathacuadrito)
+                            binding.M9A.setBackgroundResource(R.drawable.hathacuadrito)
                         }"ANTI GRAVITY"->{
-                            binding.M8A.setBackgroundResource(R.drawable.antigravityc)
+                            binding.M9A.setBackgroundResource(R.drawable.antigravityc)
                         }"HOT TRX"->{
-                            binding.M8A.setBackgroundResource(R.drawable.hottrxc)
+                            binding.M9A.setBackgroundResource(R.drawable.hottrxc)
                         }"YOGA WHEEL"->{
-                            binding.M8A.setBackgroundResource(R.drawable.yogawheelc)
+                            binding.M9A.setBackgroundResource(R.drawable.yogawheelc)
                         }"YOGA KIDS"->{
-                            binding.M8A.setBackgroundResource(R.drawable.yogakidsc)
+                            binding.M9A.setBackgroundResource(R.drawable.yogakidsc)
                         }"BIKRAM 90 min."->{
-                            binding.M8A.setBackgroundResource(R.drawable.bikram90)
+                            binding.M9A.setBackgroundResource(R.drawable.bikram90)
                         }"POWER WHEEL"->{
-                            binding.M8A.setBackgroundResource(R.drawable.power_wheel)
+                            binding.M9A.setBackgroundResource(R.drawable.power_wheel)
                         }
                         }
                         }"07:00 pm - 08:00 pm"->{
@@ -154,15 +154,15 @@ class horarios : AppCompatActivity() {
                             }"HOT VINYASA" ->{
                             binding.M73P.setBackgroundResource(R.drawable.hotvinyasac)
                         }"HATHA"->{
-                            binding.M73P.setBackgroundResource(R.drawable.hathacuadrito)
+                            binding.M732P.setBackgroundResource(R.drawable.hathacuadrito)
                         }"ANTI GRAVITY"->{
-                            binding.M73P.setBackgroundResource(R.drawable.antigravityc)
+                            binding.M732P.setBackgroundResource(R.drawable.antigravityc)
                         }"HOT TRX"->{
                             binding.M73P.setBackgroundResource(R.drawable.hottrxc)
                         }"YOGA WHEEL"->{
                             binding.M73P.setBackgroundResource(R.drawable.yogawheelc)
                         }"YOGA KIDS"->{
-                            binding.M73P.setBackgroundResource(R.drawable.yogakidsc)
+                            binding.M732P.setBackgroundResource(R.drawable.yogakidsc)
                         }"BIKRAM 90 min."->{
                             binding.M73P.setBackgroundResource(R.drawable.bikram90)
                         }"POWER WHEEL"->{
@@ -213,22 +213,22 @@ class horarios : AppCompatActivity() {
                             binding.M6P2.setBackgroundResource(R.drawable.power_wheel)
                         }
                         }
-                        }"07:30 pm - 8:30 pm"->{
+                        }"07:30 pm - 08:30 pm"->{
                         when(listaClasesSemana[i].nombreClase){
                             "BIKRAM 60 min." ->{
                                 binding.M73P.setBackgroundResource(R.drawable.bikram60)
                             }"HOT VINYASA" ->{
                             binding.M73P.setBackgroundResource(R.drawable.hotvinyasac)
                         }"HATHA"->{
-                            binding.M73P.setBackgroundResource(R.drawable.hathacuadrito)
+                            binding.M732P.setBackgroundResource(R.drawable.hathacuadrito)
                         }"ANTI GRAVITY"->{
-                            binding.M73P.setBackgroundResource(R.drawable.antigravityc)
+                            binding.M732P.setBackgroundResource(R.drawable.antigravityc)
                         }"HOT TRX"->{
                             binding.M73P.setBackgroundResource(R.drawable.hottrxc)
                         }"YOGA WHEEL"->{
                             binding.M73P.setBackgroundResource(R.drawable.yogawheelc)
                         }"YOGA KIDS"->{
-                            binding.M73P.setBackgroundResource(R.drawable.yogakidsc)
+                            binding.M732P.setBackgroundResource(R.drawable.yogakidsc)
                         }"BIKRAM 90 min."->{
                             binding.M73P.setBackgroundResource(R.drawable.bikram90)
                         }"POWER WHEEL"->{
@@ -305,26 +305,26 @@ class horarios : AppCompatActivity() {
                         binding.T7A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
-                }"08:00 am - 09:00 am"->{
+                }"09:00 am - 10:00 am"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
-                            binding.T8A.setBackgroundResource(R.drawable.bikram60)
+                            binding.T9A.setBackgroundResource(R.drawable.bikram60)
                         }"HOT VINYASA" ->{
-                        binding.T8A.setBackgroundResource(R.drawable.hotvinyasac)
+                        binding.T9A.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.T8A.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.T9A.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.T8A.setBackgroundResource(R.drawable.antigravityc)
+                        binding.T9A.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
-                        binding.T8A.setBackgroundResource(R.drawable.hottrxc)
+                        binding.T9A.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
-                        binding.T8A.setBackgroundResource(R.drawable.yogawheelc)
+                        binding.T9A.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.T8A.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.T9A.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.T8A.setBackgroundResource(R.drawable.bikram90)
+                        binding.T9A.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
-                        binding.T8A.setBackgroundResource(R.drawable.power_wheel)
+                        binding.T9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }"07:00 pm - 08:00 pm"->{
@@ -378,15 +378,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.T73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.T73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.T732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.T73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.T732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.T73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.T73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.T73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.T732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.T73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -444,9 +444,9 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.T73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.T73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.T732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.T73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.T732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.T73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
@@ -454,7 +454,7 @@ class horarios : AppCompatActivity() {
                     }"YOGA KIDS"->{
                         binding.T73P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.T73P.setBackgroundResource(R.drawable.bikram90)
+                        binding.T732P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
                         binding.T73P.setBackgroundResource(R.drawable.power_wheel)
                     }
@@ -529,26 +529,26 @@ class horarios : AppCompatActivity() {
                         binding.W7A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
-                }"08:00 am - 09:00 am"->{
+                }"09:00 am - 10:00 am"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
-                            binding.W8A.setBackgroundResource(R.drawable.bikram60)
+                            binding.W9A.setBackgroundResource(R.drawable.bikram60)
                         }"HOT VINYASA" ->{
-                        binding.W8A.setBackgroundResource(R.drawable.hotvinyasac)
+                        binding.W9A.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.W8A.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.W9A.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.W8A.setBackgroundResource(R.drawable.antigravityc)
+                        binding.W9A.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
-                        binding.W8A.setBackgroundResource(R.drawable.hottrxc)
+                        binding.W9A.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
-                        binding.W8A.setBackgroundResource(R.drawable.yogawheelc)
+                        binding.W9A.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.W8A.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.W9A.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.W8A.setBackgroundResource(R.drawable.bikram90)
+                        binding.W9A.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
-                        binding.W8A.setBackgroundResource(R.drawable.power_wheel)
+                        binding.W9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }"07:00 pm - 08:00 pm"->{
@@ -602,15 +602,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.W73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.W73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.W732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.W73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.W732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.W73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.W73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.W73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.W732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.W73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -668,15 +668,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.W73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.W73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.W732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.W73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.W732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.W73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.W73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.W73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.W732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.W73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -753,28 +753,6 @@ class horarios : AppCompatActivity() {
                         binding.Th7A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
-                }"08:00 am - 09:00 am"->{
-                    when(listaClasesSemana[i].nombreClase){
-                        "BIKRAM 60 min." ->{
-                            binding.Th8A.setBackgroundResource(R.drawable.bikram60)
-                        }"HOT VINYASA" ->{
-                        binding.Th8A.setBackgroundResource(R.drawable.hotvinyasac)
-                    }"HATHA"->{
-                        binding.Th8A.setBackgroundResource(R.drawable.hathacuadrito)
-                    }"ANTI GRAVITY"->{
-                        binding.Th8A.setBackgroundResource(R.drawable.antigravityc)
-                    }"HOT TRX"->{
-                        binding.Th8A.setBackgroundResource(R.drawable.hottrxc)
-                    }"YOGA WHEEL"->{
-                        binding.Th8A.setBackgroundResource(R.drawable.yogawheelc)
-                    }"YOGA KIDS"->{
-                        binding.Th8A.setBackgroundResource(R.drawable.yogakidsc)
-                    }"BIKRAM 90 min."->{
-                        binding.Th8A.setBackgroundResource(R.drawable.bikram90)
-                    }"POWER WHEEL"->{
-                        binding.Th7A.setBackgroundResource(R.drawable.power_wheel)
-                    }
-                    }
                 }"07:00 pm - 08:00 pm"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
@@ -826,15 +804,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.Th73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.Th732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.Th732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.Th73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.Th73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.Th732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.Th73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -892,15 +870,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.Th73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.Th732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.Th732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.Th73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.Th73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.Th73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.Th732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.Th73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -927,6 +905,28 @@ class horarios : AppCompatActivity() {
                         binding.Th5P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
                         binding.Th5P.setBackgroundResource(R.drawable.power_wheel)
+                    }
+                    }
+                }"09:00 am - 10:00 am"->{
+                    when(listaClasesSemana[i].nombreClase){
+                        "BIKRAM 60 min." ->{
+                            binding.Th9A.setBackgroundResource(R.drawable.bikram60)
+                        }"HOT VINYASA" ->{
+                        binding.Th9A.setBackgroundResource(R.drawable.hotvinyasac)
+                    }"HATHA"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.hathacuadrito)
+                    }"ANTI GRAVITY"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.antigravityc)
+                    }"HOT TRX"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.hottrxc)
+                    }"YOGA WHEEL"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.yogawheelc)
+                    }"YOGA KIDS"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.yogakidsc)
+                    }"BIKRAM 90 min."->{
+                        binding.Th9A.setBackgroundResource(R.drawable.bikram90)
+                    }"POWER WHEEL"->{
+                        binding.Th9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }
@@ -977,26 +977,26 @@ class horarios : AppCompatActivity() {
                         binding.F7A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
-                }"08:00 am - 09:00 am"->{
+                }"09:00 am - 10:00 am"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
-                            binding.F8A.setBackgroundResource(R.drawable.bikram60)
+                            binding.F9A.setBackgroundResource(R.drawable.bikram60)
                         }"HOT VINYASA" ->{
-                        binding.F8A.setBackgroundResource(R.drawable.hotvinyasac)
+                        binding.F9A.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.F8A.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.F9A.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.F8A.setBackgroundResource(R.drawable.antigravityc)
+                        binding.F9A.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
-                        binding.F8A.setBackgroundResource(R.drawable.hottrxc)
+                        binding.F9A.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
-                        binding.F8A.setBackgroundResource(R.drawable.yogawheelc)
+                        binding.F9A.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.F8A.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.F9A.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.F8A.setBackgroundResource(R.drawable.bikram90)
+                        binding.F9A.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
-                        binding.F8A.setBackgroundResource(R.drawable.power_wheel)
+                        binding.F9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }"07:00 pm - 08:00 pm"->{
@@ -1050,15 +1050,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.F73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.F73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.F732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.F73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.F732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.F73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.F73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.F73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.F732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.F73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -1116,15 +1116,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.F73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.F73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.F732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.F73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.F732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.F73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.F73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.F73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.F732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.F73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -1201,26 +1201,26 @@ class horarios : AppCompatActivity() {
                         binding.S7A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
-                }"08:00 am - 09:00 am"->{
+                }"09:00 am - 10:00 am"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
-                            binding.S8A.setBackgroundResource(R.drawable.bikram60)
+                            binding.S9A.setBackgroundResource(R.drawable.bikram60)
                         }"HOT VINYASA" ->{
-                        binding.S8A.setBackgroundResource(R.drawable.hotvinyasac)
+                        binding.S9A.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.S8A.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.S9A.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.S8A.setBackgroundResource(R.drawable.antigravityc)
+                        binding.S9A.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
-                        binding.S8A.setBackgroundResource(R.drawable.hottrxc)
+                        binding.S9A.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
-                        binding.S8A.setBackgroundResource(R.drawable.yogawheelc)
+                        binding.S9A.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.S8A.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.S9A.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.S8A.setBackgroundResource(R.drawable.bikram90)
+                        binding.S9A.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
-                        binding.S8A.setBackgroundResource(R.drawable.power_wheel)
+                        binding.S9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }"07:00 pm - 08:00 pm"->{
@@ -1274,15 +1274,15 @@ class horarios : AppCompatActivity() {
                         }"HOT VINYASA" ->{
                         binding.S73P.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.S73P.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.S732P.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.S73P.setBackgroundResource(R.drawable.antigravityc)
+                        binding.S732P.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
                         binding.S73P.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
                         binding.S73P.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.S73P.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.S732P.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
                         binding.S73P.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
@@ -1314,23 +1314,23 @@ class horarios : AppCompatActivity() {
                 }"09:15 am - 10:45 am"->{
                     when(listaClasesSemana[i].nombreClase){
                         "BIKRAM 60 min." ->{
-                            binding.S8A.setBackgroundResource(R.drawable.bikram90915)
+                            binding.S9A.setBackgroundResource(R.drawable.bikram90915)
                         }"HOT VINYASA" ->{
-                        binding.S8A.setBackgroundResource(R.drawable.hotvinyasac)
+                        binding.S9A.setBackgroundResource(R.drawable.hotvinyasac)
                     }"HATHA"->{
-                        binding.S8A.setBackgroundResource(R.drawable.hathacuadrito)
+                        binding.S9A.setBackgroundResource(R.drawable.hathacuadrito)
                     }"ANTI GRAVITY"->{
-                        binding.S8A.setBackgroundResource(R.drawable.antigravityc)
+                        binding.S9A.setBackgroundResource(R.drawable.antigravityc)
                     }"HOT TRX"->{
-                        binding.S8A.setBackgroundResource(R.drawable.hottrxc)
+                        binding.S9A.setBackgroundResource(R.drawable.hottrxc)
                     }"YOGA WHEEL"->{
-                        binding.S8A.setBackgroundResource(R.drawable.yogawheelc)
+                        binding.S9A.setBackgroundResource(R.drawable.yogawheelc)
                     }"YOGA KIDS"->{
-                        binding.S8A.setBackgroundResource(R.drawable.yogakidsc)
+                        binding.S9A.setBackgroundResource(R.drawable.yogakidsc)
                     }"BIKRAM 90 min."->{
-                        binding.S8A.setBackgroundResource(R.drawable.bikram90)
+                        binding.S9A.setBackgroundResource(R.drawable.bikram90)
                     }"POWER WHEEL"->{
-                        binding.S8A.setBackgroundResource(R.drawable.power_wheel)
+                        binding.S9A.setBackgroundResource(R.drawable.power_wheel)
                     }
                     }
                 }"07:30 pm - 08:30 pm"->{
@@ -1523,9 +1523,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.M8A.setOnClickListener {
+        binding.M9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "L" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "L" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1534,9 +1534,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.T8A.setOnClickListener {
+        binding.T9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "M" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "M" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1545,9 +1545,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.W8A.setOnClickListener {
+        binding.W9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "W" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "W" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1556,9 +1556,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.Th8A.setOnClickListener {
+        binding.Th9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "J" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "J" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1567,9 +1567,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.F8A.setOnClickListener {
+        binding.F9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "F" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "F" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1578,9 +1578,9 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.S8A.setOnClickListener {
+        binding.S9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "S" && listaClasesSemana[i].hora == "08:00 am - 09:00 am"){
+                if (listaClasesSemana[i].DOW == "S" && listaClasesSemana[i].hora == "09:00 am - 10:00 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1856,7 +1856,7 @@ class horarios : AppCompatActivity() {
         }
         binding.M73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "L" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "L" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1867,7 +1867,7 @@ class horarios : AppCompatActivity() {
         }
         binding.T73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "M" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "M" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1878,7 +1878,7 @@ class horarios : AppCompatActivity() {
         }
         binding.W73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "W" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "W" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1889,7 +1889,7 @@ class horarios : AppCompatActivity() {
         }
         binding.Th73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "J" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "J" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1899,7 +1899,7 @@ class horarios : AppCompatActivity() {
         }
         binding.F73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "V" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "V" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1909,7 +1909,7 @@ class horarios : AppCompatActivity() {
         }
         binding.S73P.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "S" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm")){
+                if (listaClasesSemana[i].DOW == "S" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm") && listaClasesSemana[i].SalonId == "2"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -1917,7 +1917,7 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
-        binding.S8A.setOnClickListener {
+        binding.S9A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
                 if (listaClasesSemana[i].DOW == "S" && listaClasesSemana[i].hora == "09:15 am - 10:45 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
@@ -1938,9 +1938,76 @@ class horarios : AppCompatActivity() {
                 }
             }
         }
+        binding.M732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "L" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+        binding.T732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "M" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+        binding.W732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "W" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+        binding.Th732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "J" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 pm" || listaClasesSemana[i].hora == "07:30 pm - 09:00 pm" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+        binding.F732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "V" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 am" || listaClasesSemana[i].hora == "07:30 pm - 09:00 am" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+        binding.S732P.setOnClickListener {
+            for(i in (0 until listaClasesSemana.size)){
+                if (listaClasesSemana[i].DOW == "S" && (listaClasesSemana[i].hora == "07:30 pm - 08:30 am" || listaClasesSemana[i].hora == "07:30 pm - 09:00 am" ) && listaClasesSemana[i].SalonId == "1"){
+                    val dialog = reservarClaseDialog2(listaClasesSemana[i])
+                    dialog.show(supportFragmentManager, "Reservar clase Dialog")
+                }
+                else{
+
+                }
+            }
+        }
+
         binding.domingoiv.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
-                if (listaClasesSemana[i].DOW == "D" && listaClasesSemana[i].hora == "10:00 am - 11:30 am"){
+                if (listaClasesSemana[i].DOW == "D" && listaClasesSemana[i].hora == "09:00 am - 10:30 am"){
                     val dialog = reservarClaseDialog2(listaClasesSemana[i])
                     dialog.show(supportFragmentManager, "Reservar clase Dialog")
                 }
@@ -2001,7 +2068,9 @@ class horarios : AppCompatActivity() {
                             )
                         }
                 }
-                println(listaClasesSemana)
+                for (i in (0 until  listaClasesSemana.size)){
+                    println(listaClasesSemana[i])
+                }
             } catch (ex: Exception) {
             }
         }

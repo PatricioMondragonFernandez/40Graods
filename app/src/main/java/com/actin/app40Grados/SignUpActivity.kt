@@ -153,6 +153,7 @@ class SignUpActivity : AppCompatActivity() {
 
             } catch (ex: Exception) {
                 this@SignUpActivity.runOnUiThread(java.lang.Runnable{
+                    println(ex)
                     Toast.makeText(this@SignUpActivity, "La cuenta no pudo ser creada", Toast.LENGTH_SHORT).show()
                 })
             }

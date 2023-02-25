@@ -35,7 +35,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/inlayoutH"
         android:layout_width="0dp"
-        android:layout_height="700dp"
+        android:layout_height="850dp"
         app:layout_constraintTop_toTopOf="@id/guidelineHorarios3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineHorarios2">
@@ -153,7 +153,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout1"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="20sp"
-            android:text="7:00"
+            android:text="11:30"
             android:maxLines="1"
             app:layout_constraintTop_toTopOf="@id/guidelayout15"
             android:autoSizeTextType="uniform"/>
@@ -165,7 +165,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="18sp"
             android:layout_marginStart="5dp"
-            android:text="@string/PM"
+            android:text="@string/AM"
             android:maxLines="1"
             app:layout_constraintTop_toBottomOf="@id/Tv7p"
             android:autoSizeTextType="uniform"/>
@@ -357,7 +357,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/M8A"
+            android:id="@+id/M9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout1"
@@ -368,7 +368,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/T8A"
+            android:id="@+id/T9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout2"
@@ -379,7 +379,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/W8A"
+            android:id="@+id/W9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout3"
@@ -390,7 +390,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/Th8A"
+            android:id="@+id/Th9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout4"
@@ -401,7 +401,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/F8A"
+            android:id="@+id/F9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout5"
@@ -412,7 +412,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/S8A"
+            android:id="@+id/S9A"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="@id/guidelayout6"
@@ -694,7 +694,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout2"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -705,7 +705,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout3"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -716,7 +716,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout4"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -727,7 +727,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout5"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -738,7 +738,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelayout6"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -749,8 +749,76 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/guidelayout20"
             android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelayout21">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/M732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout1"
+            app:layout_constraintEnd_toEndOf="@id/guidelayout2"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
             app:layout_constraintBottom_toBottomOf="parent">
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/T732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout2"
+            app:layout_constraintEnd_toEndOf="@id/guidelayout3"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/W732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout3"
+            app:layout_constraintEnd_toEndOf="@id/guidelayout4"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/Th732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout4"
+            app:layout_constraintEnd_toEndOf="@id/guidelayout5"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/F732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout5"
+            app:layout_constraintEnd_toEndOf="@id/guidelayout6"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/S732P"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/guidelayout6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelayout21"
+            android:layout_marginStart="1dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <ImageView
             android:layout_width="match_parent"
@@ -878,85 +946,94 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.156" />
+            app:layout_constraintGuide_percent="0.135" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.186" />
+            app:layout_constraintGuide_percent="0.165" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.283" />
+            app:layout_constraintGuide_percent="0.251" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.313" />
+            app:layout_constraintGuide_percent="0.281" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.409" />
+            app:layout_constraintGuide_percent="0.366" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.439" />
+            app:layout_constraintGuide_percent="0.396" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.535" />
+            app:layout_constraintGuide_percent="0.482" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.565" />
+            app:layout_constraintGuide_percent="0.512" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.661" />
+            app:layout_constraintGuide_percent="0.597" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.691" />
+            app:layout_constraintGuide_percent="0.627" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.787" />
+            app:layout_constraintGuide_percent="0.713" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.884" />
+            app:layout_constraintGuide_percent="0.798" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelayout20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.904" />
+            app:layout_constraintGuide_percent="0.828" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelayout21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.913" />
+
+
 
 
 

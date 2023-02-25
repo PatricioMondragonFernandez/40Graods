@@ -149,7 +149,7 @@
             android:textAlignment="viewStart"
             android:textColor="@color/black"
             app:strokeWidth="0dp"
-            app:icon="@drawable/perfil_icono"
+            app:icon="@drawable/iconop"
             app:iconTint="@color/black"
             android:elevation="0dp"
             style="@style/Widget.AppCompat.Button.Borderless"

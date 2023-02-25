@@ -13,8 +13,8 @@ android {
         applicationId "com.actin.app40Grados"
         minSdk 21
         targetSdk 32
-        versionCode 3
-        versionName "1.0"
+        versionCode 8
+        versionName "1.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -72,6 +72,7 @@ dependencies {
     //calendario personalizado
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
 
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     //room
     implementation "androidx.room:room-ktx:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"

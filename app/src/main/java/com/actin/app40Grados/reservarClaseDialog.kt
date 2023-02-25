@@ -18,6 +18,7 @@ import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
 import java.text.SimpleDateFormat
+import java.time.ZoneId
 import java.util.*
 
 class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: String): AppCompatDialogFragment() {
@@ -34,16 +35,16 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
             .setMessage("¿Reservar la clase de ${Clase.tipoDeClase} con el profesor ${Clase.maestro} el dia ${Clase.fecha} ?. Quedan ${cupo - ocupado} lugares.")
             .setPositiveButton("Si") { dialogInterface: DialogInterface, i: Int ->
                 val calendario = Calendar.getInstance()
+                val tz = TimeZone.getTimeZone("America/Mexico_City")
+                calendario.timeZone = tz
                 val hora = calendario.get(Calendar.HOUR_OF_DAY).toInt()
+                println(hora)
                 val delim = ":"
                 val arreglo = Clase.hora.split(delim)
                 val horaClase = arreglo[0].toInt()
+                println(horaClase)
                 val sfd = SimpleDateFormat("dd/MM/yyyy")
                 val currentDate = sfd.format(Date())
-
-                if (Clase.fecha == currentDate && (horaClase-1) < hora){
-                    Toast.makeText(context, "Es muy tarde para reservar esa clase.", Toast.LENGTH_SHORT).show()
-                }else{
                     if (cupo - ocupado <= 0){
                         Toast.makeText(context, "Ya no hay lugares para esta clase.", Toast.LENGTH_SHORT).show()
                     }else{
@@ -54,13 +55,16 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
                                 println("este es el mensaje $msg")
                                 if (msg == "El Registro se guardo correctamente"){
                                     Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
-                                    createNotificationChannel()
-                                    scheduleNotification()
+                                    //createNotificationChannel()
+                                    //scheduleNotification()
                                 }else if(msg == "El Registro se guardo correctamente El usuario no cuenta con paquete asignado"){
                                     Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
 
                                 }else if(msg == "El Registro se guardo correctamente El ultimo paquete registrado ha expirado"){
                                     Toast.makeText(context, "El Registro se guardo correctamente El ultimo paquete registrado ha expirado", Toast.LENGTH_SHORT).show()
+
+                                }else if(msg == "El Registro se guardo correctamente El tipo de salon de la clase no concuerda con el salon del paquete"){
+                                    Toast.makeText(context, "El Registro se guardo correctamente El tipo de salon de la clase no consuerda con el salón del paquete", Toast.LENGTH_LONG).show()
 
                                 }else{
                                     Toast.makeText(context, "No pudo hacerse la reservación es posible que no cuentes con un paquete asignado o ya tengas una reservación para esa clase.", Toast.LENGTH_LONG).show()
@@ -68,7 +72,6 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
                             }
                         }
                     }
-                }
             }
             .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int -> }
 

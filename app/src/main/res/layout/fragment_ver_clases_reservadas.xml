@@ -26,15 +26,6 @@
             android:textSize="20sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewClasesReservadas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/estasSonTusCitasTv" />
-
         <TextView
             android:id="@+id/noClasesTv"
             app:layout_constraintEnd_toEndOf="@+id/guidelineClasesReservadas3"
@@ -43,8 +34,17 @@
             android:text="No tienes clases Reservadas"
             android:textSize="20sp"
             android:gravity="center"
+            android:elevation="5dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewClasesReservadas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/estasSonTusCitasTv" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineClasesReservadas1"

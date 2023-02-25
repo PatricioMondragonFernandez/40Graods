@@ -25,7 +25,7 @@ import java.util.*
 
 class verClasesReservadasFragment : Fragment() {
     private lateinit var listaClases:MutableList<clasesReservadas>
-    private lateinit var lista2:MutableList<clasesReservadas>
+    private lateinit var listaVacia:MutableList<clasesReservadas>
     private lateinit var clasesRecyclerview: RecyclerView
     private lateinit var textView: TextView
     private lateinit var dayString: String
@@ -40,7 +40,7 @@ class verClasesReservadasFragment : Fragment() {
         clasesRecyclerview = view.findViewById<RecyclerView>(R.id.recyclerviewClasesReservadas)
 
         listaClases = mutableListOf<clasesReservadas>()
-        lista2 = mutableListOf<clasesReservadas>()
+        listaVacia = mutableListOf<clasesReservadas>()
 
         textView = view.findViewById<TextView>(R.id.noClasesTv)
 
@@ -51,46 +51,12 @@ class verClasesReservadasFragment : Fragment() {
         clasesReservadasViewModel.clasesReservadasModel.observe(viewLifecycleOwner, androidx.lifecycle.Observer { lista ->
             clasesRecyclerview.layoutManager = LinearLayoutManager(context)
             clasesRecyclerview.setHasFixedSize(false)
+            var lista2 = mutableListOf<clasesReservadas>()
             for (i in (0 until lista.size)){
                 if (lista[i].mostrar == 1){
                     lista2.add(lista[i])
                 }
             }
-            /*for (i in (0 until lista2.size)){
-                val delim = "/"
-                val list: MutableList<String> = lista2[i].fecha.split(delim) as MutableList<String>
-                val dia = list[0]
-                val ano = list[2]
-                var mes = list[1]
-                when (list[1]){
-                    "01"->{
-                        mes = "Enero"
-                    }"02"->{
-                        mes = "Febrero"
-                    }"03"->{
-                        mes = "Marzo"
-                    }"04"->{
-                        mes = "Abril"
-                    }"05"->{
-                        mes = "Mayo"
-                    }"06"->{
-                        mes = "Junio"
-                    }"07"->{
-                        mes = "Julio"
-                    }"08"->{
-                        mes = "Agosto"
-                    }"09"->{
-                        mes = "Septiembre"
-                    }"10"->{
-                        mes = "Octubre"
-                    }"11"->{
-                        mes = "Noviembre"
-                    }"12"->{
-                        mes = "Diciembre"
-                    }
-                }
-                listaClases[i].fecha = "$dia/$mes/$ano"
-            }*/
             clasesRecyclerview.adapter = clasesReservadasAdapter(lista2, {onItemSelected(it)})
             textView.visibility = View.GONE
         })
@@ -111,6 +77,7 @@ class verClasesReservadasFragment : Fragment() {
     private fun llamadaApi(){
         CoroutineScope(Dispatchers.IO).launch{
             try{
+                listaClases.clear()
                 val url = URL("http://www.actinseguro.com/booking/abkcom008.aspx?1,${prefs.getID()}")
                 val conn = url.openConnection()
 
@@ -127,7 +94,6 @@ class verClasesReservadasFragment : Fragment() {
                 val arrayJson = objeto.getJSONArray("CLASES_RESERVADAS")
                 val objetoindice1 = arrayJson.getJSONObject(0)
                 if (objetoindice1.getString("CIA") != "No Hay Clases registradas"){
-                    listaClases.clear()
                     for (i in (0 until arrayJson.length())){
                         val objeto = arrayJson.getJSONObject(i)
                         var CIA = objeto.getString("CIA")
@@ -172,8 +138,8 @@ class verClasesReservadasFragment : Fragment() {
                     clasesReservadasViewModel.addClases(listaClases)
                 }else{
                     withContext(Dispatchers.Main){
-                        lista2.clear()
                         listaClases.clear()
+                        clasesReservadasViewModel.addClases(listaVacia)
                         textView.visibility = View.VISIBLE
                     }
                 }

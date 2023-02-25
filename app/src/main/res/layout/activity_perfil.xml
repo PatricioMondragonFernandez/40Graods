@@ -45,79 +45,28 @@
       android:textSize="15dp"
       android:layout_marginTop="20dp"/>
 
-  <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/crreoTIL"
-      style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="5dp"
-      android:textColorHint="@color/primario"
-      app:boxBackgroundColor="#94999999"
-      app:boxCornerRadiusBottomEnd="30dp"
-      app:boxCornerRadiusBottomStart="30dp"
-      app:boxCornerRadiusTopEnd="30dp"
-      app:boxCornerRadiusTopStart="30dp"
-      app:boxStrokeColor="@color/white"
-      app:boxStrokeWidth="0dp"
-      app:boxStrokeWidthFocused="0dp"
-      app:hintTextAppearance="@style/estilosTIL"
-      app:layout_constraintEnd_toEndOf="@id/guideline49"
-      app:layout_constraintStart_toStartOf="@id/guideline48"
-      app:layout_constraintTop_toBottomOf="@+id/correoTv">
-
-    <EditText
-        android:id="@+id/correoEt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="\@email.com"
-        android:textColorHint="@color/primario"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="196dp" />
-
-  </com.google.android.material.textfield.TextInputLayout>
-
-
-  <Button
-      android:id="@+id/btnValidar"
-      android:layout_width="0dp"
-      android:background="@drawable/botton_login"
-      android:textColor="@color/white"
-      android:text="Validar"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="10dp"
-      app:layout_constraintEnd_toEndOf="@id/guideline49"
-      app:layout_constraintStart_toStartOf="@id/guideline48"
-      app:layout_constraintTop_toBottomOf="@+id/crreoTIL"/>
-
   <TextView
-      android:id="@+id/ingresaDatosTv"
+      android:id="@+id/correoUsuarioTv"
       android:layout_width="0dp"
+      android:layout_marginTop="10dp"
       android:layout_height="wrap_content"
-      android:textSize="18dp"
-      android:visibility="gone"
-      android:layout_marginEnd="10dp"
-      android:layout_marginStart="10dp"
+      android:textSize="20sp"
       android:textColor="@color/primario"
-      android:text="@string/ingresaDatos"
-      app:layout_constraintTop_toBottomOf="@id/btnValidar"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      android:maxLines="2"
-      android:layout_marginTop="10dp"/>
+      app:layout_constraintStart_toStartOf="@id/guideline48"
+      app:layout_constraintEnd_toEndOf="@id/guideline49"
+      app:layout_constraintTop_toBottomOf="@id/correoTv"/>
 
 
   <TextView
       android:id="@+id/nombre"
       android:layout_width="wrap_content"
-      android:visibility="gone"
       android:layout_height="wrap_content"
       android:text="Nombre"
       android:layout_marginStart="10dp"
       app:layout_constraintStart_toStartOf="@id/guideline48"
-      app:layout_constraintTop_toBottomOf="@id/ingresaDatosTv"
+      app:layout_constraintTop_toBottomOf="@id/correoUsuarioTv"
       android:textSize="15dp"
-      android:layout_marginTop="25dp"/>
+      android:layout_marginTop="15dp"/>
 
   <com.google.android.material.textfield.TextInputLayout
       android:id="@+id/nombreTIL"
@@ -128,8 +77,9 @@
       android:textColorHint="@color/primario"
       app:boxBackgroundColor="#94999999"
       app:boxCornerRadiusBottomEnd="30dp"
-      android:visibility="gone"
       app:boxCornerRadiusBottomStart="30dp"
+      app:hintEnabled="false"
+      app:hintAnimationEnabled="false"
       app:boxCornerRadiusTopEnd="30dp"
       app:boxCornerRadiusTopStart="30dp"
       app:boxStrokeColor="@color/white"
@@ -156,7 +106,6 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Teléfono"
-      android:visibility="gone"
       app:layout_constraintTop_toBottomOf="@+id/nombreTIL"
       app:layout_constraintStart_toStartOf="@id/guideline48"
       android:layout_marginTop="15dp"
@@ -173,9 +122,9 @@
       app:boxCornerRadiusBottomEnd="30dp"
       app:boxCornerRadiusBottomStart="30dp"
       app:boxCornerRadiusTopEnd="30dp"
+      app:hintEnabled="false"
       app:boxCornerRadiusTopStart="30dp"
       app:boxStrokeColor="@color/white"
-      android:visibility="gone"
       app:boxStrokeWidth="0dp"
       app:boxStrokeWidthFocused="0dp"
       app:hintTextAppearance="@style/estilosTIL"
@@ -202,7 +151,6 @@
       android:id="@+id/fechaN"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:visibility="gone"
       android:text="@string/FechaNacimiento"
       app:layout_constraintTop_toBottomOf="@id/telefonoTIL"
       app:layout_constraintStart_toStartOf="@id/guideline48"
@@ -214,7 +162,6 @@
       android:layout_height="wrap_content"
       app:layout_constraintTop_toBottomOf="@id/fechaN"
       android:text="Día"
-      android:visibility="gone"
       android:maxLines="1"
       app:layout_constraintEnd_toEndOf="@+id/guideline50"
       app:layout_constraintStart_toStartOf="@id/guideline48"
@@ -229,7 +176,6 @@
       android:layout_marginTop="5dp"
       android:textColorHint="@color/primario"
       app:boxBackgroundColor="#94999999"
-      android:visibility="gone"
       app:boxCornerRadiusBottomEnd="30dp"
       app:boxCornerRadiusBottomStart="30dp"
       app:boxCornerRadiusTopEnd="30dp"
@@ -265,7 +211,6 @@
       android:layout_height="wrap_content"
       app:layout_constraintTop_toBottomOf="@id/fechaN"
       android:text="Mes"
-      android:visibility="gone"
       android:maxLines="1"
       android:layout_marginStart="15dp"
       app:layout_constraintStart_toStartOf="@id/guideline50"
@@ -279,7 +224,6 @@
       android:layout_marginTop="5dp"
       android:textColorHint="@color/primario"
       app:boxBackgroundColor="#94999999"
-      android:visibility="gone"
       app:boxCornerRadiusBottomEnd="30dp"
       app:boxCornerRadiusBottomStart="30dp"
       app:boxCornerRadiusTopEnd="30dp"
@@ -316,7 +260,6 @@
       app:layout_constraintTop_toBottomOf="@id/fechaN"
       android:text="Año"
       android:maxLines="1"
-      android:visibility="gone"
       android:layout_marginStart="15dp"
       app:layout_constraintStart_toStartOf="@id/guideline51"
       android:layout_marginTop="25dp"/>
@@ -332,7 +275,6 @@
       app:boxCornerRadiusBottomEnd="30dp"
       app:boxCornerRadiusBottomStart="30dp"
       app:boxCornerRadiusTopEnd="30dp"
-      android:visibility="gone"
       app:boxCornerRadiusTopStart="30dp"
       app:boxStrokeColor="@color/white"
       app:boxStrokeWidth="0dp"
@@ -364,7 +306,6 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="@string/contrasenaNueva"
-      android:visibility="gone"
       app:layout_constraintStart_toStartOf="@id/guideline48"
       app:layout_constraintTop_toBottomOf="@id/diaTIL"
       android:textSize="15dp"
@@ -379,7 +320,6 @@
       android:textColorHint="@color/primario"
       app:boxBackgroundColor="#94999999"
       app:boxCornerRadiusBottomEnd="30dp"
-      android:visibility="gone"
       app:boxCornerRadiusBottomStart="30dp"
       app:boxCornerRadiusTopEnd="30dp"
       app:boxCornerRadiusTopStart="30dp"
@@ -410,7 +350,6 @@
       android:id="@+id/btnActualizar"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:visibility="gone"
       app:layout_constraintTop_toBottomOf="@id/contrasenaNTIL"
       app:layout_constraintStart_toStartOf="@id/guideline48"
       android:text="Actualizar"

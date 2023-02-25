@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.actin.app40Grados.ViewModel.ViewModelClasesReservadas
 import com.actin.app40Grados.model.clasesReservadas
 import kotlinx.coroutines.*
@@ -19,24 +20,35 @@ import java.util.*
 class cancelarReservacionDialog(private val Clase: clasesReservadas): AppCompatDialogFragment() {
 
     lateinit var msg: String
-
+    private val clasesReservadasViewModel: ViewModelClasesReservadas by viewModels()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+
         msg = ""
         val builder = AlertDialog.Builder(context)
         builder.setTitle("¿Cancelar Clase?")
             .setMessage("Quieres cancelar la clase de ${Clase.tipoDeClase} con el profesor ${Clase.maestro} el dia ${Clase.fecha}?")
             .setPositiveButton("Sí"){dialogInterface: DialogInterface, i: Int ->
                 val calendario = Calendar.getInstance()
-                val hora = calendario.get(Calendar.HOUR_OF_DAY).toInt()
+                val tz = TimeZone.getTimeZone("America/Mexico_City")
+                calendario.timeZone = tz
+                var hora = calendario.get(Calendar.HOUR_OF_DAY).toInt()
+                hora += 2
                 val delim = ":"
+                val delim1 = " "
+                val arreglo1 = Clase.hora.split(delim1)
                 val arreglo = Clase.hora.split(delim)
-                val horaClase = arreglo[0].toInt()
+                var horaClase = arreglo[0].toInt()
+                if (arreglo1[1] == "pm"){
+                    horaClase += 12
+                }
+                println(horaClase)
+                println(hora)
                 val sfd = SimpleDateFormat("dd/MM/yy")
                 val fecha = Clase.fecha
                 val currentDate = sfd.format(Date())
 
                 if (horaClase >= 12){
-                    if (fecha == currentDate && horaClase - hora < 8){
+                    if (fecha == currentDate && horaClase - 8 < hora ){
                         Toast.makeText(context, "Solo puedes cancelar las clases de la tarde con 8 horas de anticipación", Toast.LENGTH_SHORT).show()
                     }else{
                         llamadaApi()
@@ -46,6 +58,7 @@ class cancelarReservacionDialog(private val Clase: clasesReservadas): AppCompatD
                                 if (msg == "la clase ha sido cancelada"){
                                     Toast.makeText(context, "La clase ha sido cancelada exitosamente.", Toast.LENGTH_SHORT).show()
 
+
                                 }else{
                                     Toast.makeText(context, "Hubo un problema haciendo la cancelación.", Toast.LENGTH_SHORT).show()
                                 }
@@ -53,7 +66,7 @@ class cancelarReservacionDialog(private val Clase: clasesReservadas): AppCompatD
                         }
                     }
                 }else{
-                    if(fecha == currentDate && horaClase - hora < 3 ){
+                    if(fecha == currentDate && horaClase - 3 < hora ){
                         Toast.makeText(context, "Solo puedes cancelar las clases de la mañana con 3 horas de anticipación", Toast.LENGTH_SHORT).show()
                     }else{
                         llamadaApi()

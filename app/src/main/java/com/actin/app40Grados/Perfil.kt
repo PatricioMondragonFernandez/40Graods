@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import app40grados.R
 import app40grados.databinding.ActivityPerfilBinding
+import com.actin.app40Grados.aplicacion40Grados.Companion.prefs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,6 +29,11 @@ class Perfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.correoUsuarioTv.text = prefs.getCorreo()
+        binding.nombreEt.hint = prefs.getName()
+        binding.telefonoEt.hint = prefs.getTelefono()
+        println(prefs.getTelefono())
         val dias = resources.getStringArray(R.array.Arreglo_Dias)
         val meses = resources.getStringArray(R.array.Arreglo_meses)
         val anos = resources.getStringArray(R.array.Arreglo_anos)
@@ -41,9 +47,24 @@ class Perfil : AppCompatActivity() {
         binding.mesACTV.setAdapter(meseadapter)
         binding.anoACTV.setAdapter(anosadapter)
 
-        binding.btnValidar.setOnClickListener {
-            validar()
+
+        binding.telefonoEt.setOnFocusChangeListener { view, b ->
+            if (b){
+                binding.telefonoEt.hint = ""
+            }else{
+
+            }
         }
+
+        binding.nombreEt.setOnFocusChangeListener { view, b ->
+            if (b){
+                binding.nombreEt.hint = ""
+            }else{
+
+            }
+        }
+
+
         binding.btnActualizar.setOnClickListener {
             actualizarDatos()
         }
@@ -52,66 +73,15 @@ class Perfil : AppCompatActivity() {
         }
     }
 
-    private fun validar() {
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val email = binding.correoEt.text.toString()
-                binding.crreoTIL.isFocusable = false
-                val datos = StringBuffer()
-                val url = URL("https://actinseguro.com/booking/abkcom015.aspx?$email")
-                val conn = url.openConnection()
-                BufferedReader(InputStreamReader(conn.getInputStream())).use { inp ->
-                    var line: String?
-                    while (inp.readLine().also { line = it } != null) {
-                        datos.append(line)
-                    }
-                }
-                val respuesta = datos.toString()
-                println(respuesta)
-                if (respuesta == "{\"MSG\":\"EXISTE\"}"){
-                    this@Perfil.runOnUiThread(java.lang.Runnable {
-                        binding.correoEt.isFocusable = false
-                        binding.ingresaDatosTv.visibility = View.VISIBLE
-                        binding.nombre.visibility = View.VISIBLE
-                        binding.nombreTIL.visibility = View.VISIBLE
-                        binding.telefonoTv.visibility = View.VISIBLE
-                        binding.telefonoTIL.visibility = View.VISIBLE
-                        binding.fechaN.visibility = View.VISIBLE
-                        binding.dia.visibility = View.VISIBLE
-                        binding.diaTIL.visibility = View.VISIBLE
-                        binding.mes.visibility = View.VISIBLE
-                        binding.mesTIL.visibility = View.VISIBLE
-                        binding.ano.visibility = View.VISIBLE
-                        binding.anoTIL.visibility = View.VISIBLE
-                        binding.nombre.visibility = View.VISIBLE
-                        binding.constrasenanuevaTv.visibility = View.VISIBLE
-                        binding.contrasenaNTIL.visibility = View.VISIBLE
-                        binding.btnActualizar.visibility = View.VISIBLE
-                        Toast.makeText(this@Perfil, "El correo existe.", Toast.LENGTH_SHORT).show()
-                    })
-
-                }else{
-                    this@Perfil.runOnUiThread(java.lang.Runnable {
-                        Toast.makeText(this@Perfil, "El correo que ingresaste es incorrecto", Toast.LENGTH_SHORT).show()
-                    })
-                }
-            } catch (ex: Exception) {
-                this@Perfil.runOnUiThread(java.lang.Runnable {
-                    Toast.makeText(this@Perfil, "Error comunicandose con el servidor, revisa tu conexión a internet.", Toast.LENGTH_SHORT).show()
-                })
-            }
-        }
-    }
-
 
     private fun actualizarDatos(){
         CoroutineScope(Dispatchers.IO).launch {
-                val email = binding.correoEt.text.toString()
+                val email = prefs.getCorreo()
                 val nombre = binding.nombreEt.text.toString()
                 val telefono = binding.telefonoEt.text.toString()
                 val dia = binding.diaACTV.text.toString()
                 val mes = binding.mesACTV.text.toString()
-                val año = binding.ano.text.toString()
+                val año = binding.anoACTV.text.toString()
                 val fecha = "$dia/$mes/$año"
                 val contraseña = validatePassword()
                 if (binding.constrasenaNEt.text.isEmpty()){
@@ -119,6 +89,7 @@ class Perfil : AppCompatActivity() {
                         if (validateDate() == "vacio"){
                             val objeto = JSONObject("{\"CIA\": \"1\", \"NOMBRE\":\"$nombre\", \"CORREO\":\"$email\", \"TELEFONO\":\"$telefono\", \"PAQUETE\":\"\", \"PASSWORD\":\"\", \"FECHANAC\":\"\"}")
                             val postData = objeto.toString()
+                            println(postData)
                             val url = URL("https://actinseguro.com/booking/abkcom016.aspx")
                             val conn = url.openConnection() as HttpsURLConnection
                             conn.doInput = true
@@ -144,13 +115,14 @@ class Perfil : AppCompatActivity() {
                             if (msg == "Usuario Actualizado"){
                                 this@Perfil.runOnUiThread(java.lang.Runnable {
                                     Toast.makeText(this@Perfil, "Usuario actualizado exitosamente.", Toast.LENGTH_SHORT).show()
-                                    binding.ingresaDatosTv.visibility = View.VISIBLE
-                                    binding.nombreEt.text = null
-                                    binding.telefonoEt.text = null
-                                    binding.diaACTV.text = null
-                                    binding.mesACTV.text = null
-                                    binding.anoACTV.text = null
-                                    binding.constrasenaNEt.text = null
+                                    if(nombre != ""){
+                                        prefs.saveName(nombre)
+                                        binding.nombreEt.hint = nombre
+                                    }
+                                    if(telefono != ""){
+                                        prefs.saveTelefono(telefono)
+                                        binding.telefonoEt.hint = telefono
+                                    }
                                 })
                             }else{
                                 this@Perfil.runOnUiThread(java.lang.Runnable {
@@ -161,6 +133,7 @@ class Perfil : AppCompatActivity() {
                         }else if (validateDate() == "lleno"){
                             val objeto = JSONObject("{\"CIA\": \"1\", \"NOMBRE\":\"$nombre\", \"CORREO\":\"$email\", \"TELEFONO\":\"$telefono\", \"PAQUETE\":\"\", \"PASSWORD\":\"\", \"FECHANAC\":\"$fecha\"}")
                             val postData = objeto.toString()
+                            println(postData)
                             val url = URL("https://actinseguro.com/booking/abkcom016.aspx")
                             val conn = url.openConnection() as HttpsURLConnection
                             conn.doInput = true
@@ -187,13 +160,14 @@ class Perfil : AppCompatActivity() {
                             if (msg == "Usuario Actualizado"){
                                 this@Perfil.runOnUiThread(java.lang.Runnable {
                                     Toast.makeText(this@Perfil, "Usuario actualizado exitosamente.", Toast.LENGTH_SHORT).show()
-                                    binding.ingresaDatosTv.visibility = View.VISIBLE
-                                    binding.nombreEt.text = null
-                                    binding.telefonoEt.text = null
-                                    binding.diaACTV.text = null
-                                    binding.mesACTV.text = null
-                                    binding.anoACTV.text = null
-                                    binding.constrasenaNEt.text = null
+                                    if(nombre != ""){
+                                        prefs.saveName(nombre)
+                                        binding.nombreEt.hint = nombre
+                                    }
+                                    if(telefono != ""){
+                                        prefs.saveTelefono(telefono)
+                                        binding.telefonoEt.hint = telefono
+                                    }
                                 })
                             }else{
                                 this@Perfil.runOnUiThread(java.lang.Runnable {
@@ -218,6 +192,7 @@ class Perfil : AppCompatActivity() {
                             if (validateDate() == "vacio"){
                                 val objeto = JSONObject("{\"CIA\": \"1\", \"NOMBRE\":\"$nombre\", \"CORREO\":\"$email\", \"TELEFONO\":\"$telefono\", \"PAQUETE\":\"\", \"PASSWORD\":\"$contraseñaN\", \"FECHANAC\":\"\"}")
                                 val postData = objeto.toString()
+                                println(postData)
                                 val url = URL("https://actinseguro.com/booking/abkcom016.aspx")
                                 val conn = url.openConnection() as HttpsURLConnection
                                 conn.doInput = true
@@ -243,13 +218,15 @@ class Perfil : AppCompatActivity() {
                                 if (msg == "Usuario Actualizado"){
                                     this@Perfil.runOnUiThread(java.lang.Runnable {
                                         Toast.makeText(this@Perfil, "Usuario actualizado exitosamente.", Toast.LENGTH_SHORT).show()
-                                        binding.ingresaDatosTv.visibility = View.VISIBLE
-                                        binding.nombreEt.text = null
-                                        binding.telefonoEt.text = null
-                                        binding.diaACTV.text = null
-                                        binding.mesACTV.text = null
-                                        binding.anoACTV.text = null
-                                        binding.constrasenaNEt.text = null
+                                        binding.contrasenaNTIL.helperText = ""
+                                        if(nombre != ""){
+                                            prefs.saveName(nombre)
+                                            binding.nombreEt.hint = nombre
+                                        }
+                                        if(telefono != ""){
+                                            prefs.saveTelefono(telefono)
+                                            binding.telefonoEt.hint = telefono
+                                        }
                                     })
                                 }else{
                                     this@Perfil.runOnUiThread(java.lang.Runnable {
@@ -260,6 +237,7 @@ class Perfil : AppCompatActivity() {
                             }else if (validateDate() == "lleno"){
                                 val objeto = JSONObject("{\"CIA\": \"1\", \"NOMBRE\":\"$nombre\", \"CORREO\":\"$email\", \"TELEFONO\":\"$telefono\", \"PAQUETE\":\"\", \"PASSWORD\":\"$contraseñaN\", \"FECHANAC\":\"$fecha\"}")
                                 val postData = objeto.toString()
+                                println(postData)
                                 val url = URL("https://actinseguro.com/booking/abkcom016.aspx")
                                 val conn = url.openConnection() as HttpsURLConnection
                                 conn.doInput = true
@@ -286,13 +264,15 @@ class Perfil : AppCompatActivity() {
                                 if (msg == "Usuario Actualizado"){
                                     this@Perfil.runOnUiThread(java.lang.Runnable {
                                         Toast.makeText(this@Perfil, "Usuario actualizado exitosamente.", Toast.LENGTH_SHORT).show()
-                                        binding.ingresaDatosTv.visibility = View.VISIBLE
-                                        binding.nombreEt.text = null
-                                        binding.telefonoEt.text = null
-                                        binding.diaACTV.text = null
-                                        binding.mesACTV.text = null
-                                        binding.anoACTV.text = null
-                                        binding.constrasenaNEt.text = null
+                                        binding.contrasenaNTIL.helperText = ""
+                                        if(nombre != ""){
+                                            prefs.saveName(nombre)
+                                            binding.nombreEt.hint = nombre
+                                        }
+                                        if(telefono != ""){
+                                            prefs.saveTelefono(telefono)
+                                            binding.telefonoEt.hint = telefono
+                                        }
                                     })
                                 }else{
                                     this@Perfil.runOnUiThread(java.lang.Runnable {

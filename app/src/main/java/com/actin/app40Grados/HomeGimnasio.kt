@@ -2,13 +2,16 @@ package com.actin.app40Grados
 import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.pdf.PdfRenderer
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.Gravity
 import android.view.View
+import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
@@ -27,9 +30,13 @@ import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener
 import kotlinx.coroutines.*
 import org.json.JSONObject
+import java.io.BufferedInputStream
 import java.io.BufferedReader
+import java.io.InputStream
 import java.io.InputStreamReader
+import java.net.HttpURLConnection
 import java.net.URL
+import javax.net.ssl.HttpsURLConnection
 
 
 class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
@@ -39,12 +46,37 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
     private val clasesReservadasViewModel: ViewModelClasesReservadas by viewModels()
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_gimnasio)
         binding = ActivityHomeGimnasioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val value =  intent.getStringExtra("valor")
+        //value recibe el valor de el boton de reservar de la pantalla nuestras clases y manda al usuario hasta el fragmento de reservar las clases
+        val value = intent.getStringExtra("valor")
+        //promoValor recibe un valor despues del login para mostrar promocion si es "1".
+        val valorPromo = intent.getStringExtra("valorPromo")
+
+        if (valorPromo == "1"){
+            val timer = object: CountDownTimer(6000, 6000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    binding.wvPromocion.visibility = View.VISIBLE
+                    val promo = intent.getStringExtra("promo").toString()
+                    println(promo)
+                    binding.wvPromocion.webViewClient = WebViewClient()
+                    /*binding.wvPromocion.settings.builtInZoomControls = true
+                    binding.wvPromocion.settings.loadWithOverviewMode = true
+                    binding.wvPromocion.settings.useWideViewPort = true*/
+                    binding.wvPromocion.setInitialScale(100)
+                    binding.wvPromocion.loadUrl("https://docs.google.com/gview?embedded=true&url=$promo")
+                }
+
+                override fun onFinish() {
+                    binding.wvPromocion.visibility = View.GONE
+                }
+            }
+            timer.start()
+        }
 
 
 
@@ -171,6 +203,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                 }
             }
         })
+
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
 
             override fun onTabSelected(tab: TabLayout.Tab) {
@@ -272,11 +305,14 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
         val month = list[2]
         val day = list[3]
         var fechaSelec: String
-        if (day.toInt() >= 10){
+        if (day.toInt() >= 10 && month.toInt() >= 10){
             fechaSelec = "$day/$month/$year"
-        }else{
+        }else if (day.toInt() < 10 && month.toInt() < 10){
+            fechaSelec = "0$day/0$month/$year"
+        }else if (day.toInt() < 10 && month.toInt() >= 10){
             fechaSelec = "0$day/$month/$year"
-
+        }else{
+            fechaSelec = "$day/0$month/$year"
         }
         println(listaClases.size)
         for (i in (0 until listaClases.size)){
