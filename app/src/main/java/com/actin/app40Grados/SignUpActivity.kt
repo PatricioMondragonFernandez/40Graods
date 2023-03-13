@@ -90,6 +90,7 @@ class SignUpActivity : AppCompatActivity() {
     }*/
 
     private fun crearUsuarioGimnasio() {
+        //Se jalan las variables de los campos que escribe el usuario
         val nombre = binding.nombreET.text.toString()
         val correo = binding.emailEt.text.toString()
         val telefono = binding.telefonoET.text.toString()
@@ -97,6 +98,7 @@ class SignUpActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
+                //Se Crea el objeto de json con los datos necesarios
                 val jsonUsuarioRegistrado = JSONObject()
                 jsonUsuarioRegistrado.put("CIA", "")
                 jsonUsuarioRegistrado.put("NOMBRE", "$nombre")
@@ -106,8 +108,7 @@ class SignUpActivity : AppCompatActivity() {
                 jsonUsuarioRegistrado.put("PASSWORD", "$password")
 
                 //crearQuickblox(correo, password)
-
-
+                //Se crea la conexión
                 val url = URL("http://actinseguro.com/booking/abkcom002.aspx")
                 val postData = jsonUsuarioRegistrado.toString()
 
@@ -133,7 +134,7 @@ class SignUpActivity : AppCompatActivity() {
                 var json = datos.toString()
 
 
-
+                //Si ya existe el correo se indica que ya existe
                 when(json){
                     "{\"MSG\":\"Ya existe el correo\"}" -> {
                         this@SignUpActivity.runOnUiThread(java.lang.Runnable{

@@ -54,14 +54,14 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
         listaClases = mutableListOf<Clases>()
 
 
-
+        //Listener del selector de fecha
         FechaET.setOnClickListener {
             showDatePickerDialog()
         }
 
         return view
     }
-
+    //Funcion que muestra el date picker
     private fun showDatePickerDialog() {
         val datePicker = DatePickerFragment { day, month, year -> onDateSelected(day, month, year) }
         datePicker.show(parentFragmentManager, "Selecciona una fecha")
@@ -75,9 +75,11 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
         val simpleDateFormat = SimpleDateFormat("EEEE")
         val date = Date(day - 1, month, year)
         dayString = simpleDateFormat.format(date)
+        //Se pone la fecha seleccionada en el edit text
             FechaET.setText("$year/$month1/$day1")
-
+            //Despues de seleccionarse la fecha, se checa si se selecciono clase con calor
             if (dropdownmenu.text.toString() == "Clase con calor") {
+                //Si se selecciono clase con calor se llama al api con el id 2 y con la fecha
                 CoroutineScope(Dispatchers.IO).launch {
                     try{
                         listaClases.clear()
@@ -97,8 +99,10 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
                         val objeto = JSONObject(json)
                         val arrayJson = objeto.getJSONArray("CLASES_POR_SALON_LUGAR")
                         println(arrayJson)
+                        //Se hace un for en el arreglo  que llega
                         for (i in (0 until arrayJson.length())) {
                             val objeto = arrayJson.getJSONObject(i)
+                            //Si el CIA es  no hay clases para esa fecha
                             if (objeto.get("CIA") == "No Hay Clases para esa fecha") {
                                 activity?.runOnUiThread(java.lang.Runnable {
                                     Toast.makeText(
@@ -108,13 +112,16 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
                                     ).show()
                                 })
                             } else {
+                                //Si el CIA es diferente a no hay clases para esa fecha
                                 val nombreClase = objeto.get("CLASE_NOMBRE")
                                 val horaClase = objeto.getString("CLASE_HORARIO")
                                 val idClase = objeto.getString("CLASE_ID_CLASE")
                                 val cupo = objeto.getString("CLASE_CUPO_MAX")
                                 val ocupado = objeto.getString("CLASE_OCUPADO")
                                 val maestro = objeto.getString("CLASE_RESPONSABLE")
+                                //Se guardan los dtos de las clases en variables y se añaden a la lista
                                 println(dayString)
+                                //Depende el maestro que llega es el maestro que se le pone a la clase y se pone la foto
                                 when(maestro){
                                     "ADRIANA GARIBAY"->{
                                         listaClases.add(i, Clases("Adriana Garibay", horaClase, R.drawable.adriana, "$nombreClase", idClase, FechaET.text.toString(), cupo, ocupado))
@@ -143,6 +150,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
                                 }
                             }
                         }
+                        //Se añade la lista de clases al recycler view
                         activity?.runOnUiThread(java.lang.Runnable {
                             clasesRecyclerview.layoutManager = LinearLayoutManager(context)
                             clasesRecyclerview.setHasFixedSize(false)
@@ -155,7 +163,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
 
                     }
                 }
-
+            //Si es clase sin calor se hace los mismo que arriba solo que se hace la llamada al api con el id de salon 1
             } else if (dropdownmenu.text.toString() == "Clase sin calor") {
                 CoroutineScope(Dispatchers.IO).launch {
                     try {
@@ -235,17 +243,21 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
             }
 
     }
-
+    //Funcion que se llama cuando el usuario de click a la clases que quiere reservar
     fun onItemSelected(Clase: Clases) {
+        //Si la clase es con calor
         if (dropdownmenu.text.toString() == "Clase con calor") {
+            //Se crea una instancia de reservarClaseDialog y se le manda el id de salon 2 y la clase que se selecciono
             val dialog = reservarClaseDialog(Clase, "2")
             dialog.show(parentFragmentManager, "reservarclasedialog")
         } else if (dropdownmenu.text.toString() == "Clase sin calor") {
+            //Si la clae es sin calor se crea una instancia de reservarClaseDialog y se manda con 1 como id de salon y la clase que se selecciono
             val dialog = reservarClaseDialog(Clase, "1")
             dialog.show(parentFragmentManager, "reservarclasedialog")
         }
     }
-
+    //Si el dorp down menu esta en la posicion 0 (clase con calor) Se checa la fecha y se hace llamada al
+    // api para que regrese las clases la fecha que esta en el edit text de fecha y el id de salon 2
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         if (position == 0) {
             if (FechaET.text.toString() == "") {
@@ -325,6 +337,7 @@ class reservarClaseFragment : Fragment(), AdapterView.OnItemClickListener {
                     }
                 }
             }
+            //Si la posicion es 1 (Clase sin calor) entonces se llama al api con el id de salon 1 y con la fecha que este en el edit text de fecha
         } else if (position == 1) {
             if (FechaET.text.toString() == "") {
 

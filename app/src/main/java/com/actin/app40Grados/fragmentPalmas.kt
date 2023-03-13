@@ -22,6 +22,7 @@ class fragmentPalmas : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =  inflater.inflate(R.layout.fragment_palmas, container, false)
+        //Fragment de palmas, desabilitado temporalmente
 
         btnAbrirMapa = view.findViewById(R.id.abrirBtnPalmas)
         btnAbrirWaze = view.findViewById(R.id.abrirWazeBtnPalmas)

@@ -27,12 +27,15 @@ class horarios : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Primero de hace la llamada al api y se reciben todas las clases
 
         llamadaApiC()
 
         binding = ActivityHorariosBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Despues se hace un when muy grande que primero checa el dia, y dentro de ese when hay otro que checa los horarios, y dentro un when que checa el nombre,
+        // si una clase hace match con uno de esos 3 atributos, se le signa la foto de la clase al layout correspondiente.
         for (i in (0 until listaClasesSemana.size)){
             when(listaClasesSemana[i].DOW){
                 "L"->{
@@ -1386,11 +1389,12 @@ class horarios : AppCompatActivity() {
         }
 
 
-
+        //Cuando todos los layouts tienen su foto, se le asigna a cada 1 un click listener.
         binding.btnBackH.setOnClickListener {
             startActivity(Intent(this, HomeGimnasio::class.java))
         }
-
+        //A cada 1 se le hace un clicklistener y se compara el dia y la hora del layout, con el dia y la hora de las clases,
+        // cuando hace match con una manda esa clase para poder ser reservada.
         binding.T6A.setOnClickListener {
             for(i in (0 until listaClasesSemana.size)){
                 if (listaClasesSemana[i].DOW == "M" && listaClasesSemana[i].hora == "06:00 am - 07:00 am"){

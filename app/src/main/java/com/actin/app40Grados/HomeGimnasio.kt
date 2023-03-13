@@ -42,7 +42,9 @@ import javax.net.ssl.HttpsURLConnection
 class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
 
     private lateinit var binding: ActivityHomeGimnasioBinding
+    //Crea una lista de clases tipo reservadas
     private lateinit var listaClases:MutableList<clasesReservadas>
+    //Crea una instancia del viemodel
     private val clasesReservadasViewModel: ViewModelClasesReservadas by viewModels()
 
 
@@ -56,7 +58,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
         val value = intent.getStringExtra("valor")
         //promoValor recibe un valor despues del login para mostrar promocion si es "1".
         val valorPromo = intent.getStringExtra("valorPromo")
-
+        //Si el valor promo es 1 crea un timer de 6 segundos que activa el webview y le carga el anuncio
         if (valorPromo == "1"){
             val timer = object: CountDownTimer(6000, 6000) {
                 override fun onTick(millisUntilFinished: Long) {
@@ -64,9 +66,6 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                     val promo = intent.getStringExtra("promo").toString()
                     println(promo)
                     binding.wvPromocion.webViewClient = WebViewClient()
-                    /*binding.wvPromocion.settings.builtInZoomControls = true
-                    binding.wvPromocion.settings.loadWithOverviewMode = true
-                    binding.wvPromocion.settings.useWideViewPort = true*/
                     binding.wvPromocion.setInitialScale(100)
                     binding.wvPromocion.loadUrl("https://docs.google.com/gview?embedded=true&url=$promo")
                 }
@@ -88,41 +87,47 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
 
         //llamada para poner la lista de clases en el calendario
         llamadaApi()
-
+        //Observador del viewmodel de la lista de las clases reservadas
         clasesReservadasViewModel.clasesReservadasModel.observe(this, Observer{
 
 
         })
 
 
-        //On click listener del
+        //On click listener del icono del calendario
         binding.calendarioIB.setOnClickListener {
             binding.calendarView.visibility = View.VISIBLE
+            //Hace visible una vista transparente para hacer el efecto del calendario
             binding.viewcalendario.visibility = View.VISIBLE
+            //Hace visible una vista blanca sobre la que va el calendario para que se vea bonitp
             binding.viewblnca.visibility = View.VISIBLE
         }
-        //On click listener para salirse del calendario
+        //On click listener de la vista transparente para salirse del calendario
         binding.viewcalendario.setOnClickListener {
+            //Quita la vista del calendario, de la vista transparente y de la vista blanca
             binding.calendarView.visibility = View.GONE
             binding.viewcalendario.visibility = View.GONE
             binding.viewblnca.visibility = View.GONE
         }
 
-
+        //Listener de cuando se clickea una fecha en el calendario
         binding.calendarView.setOnDateChangedListener { calendarView, calendarDay, b ->
+            //Manda a llamar esa funcion
             onDateSelected(calendarView, calendarDay, b)
         }
+        //Recibe el valor del boton reservar de la pantalla de nustras clases y si es 1, te manda al fragmento de reservar clases
         if (value == "1"){
             binding.tabLayout.selectTab(binding.tabLayout.getTabAt(2))
         }
+        //Listener del icono del menu
         binding.menuIv.setOnClickListener{
-
+            //Crea la vista del menu
             val view = View.inflate(this@HomeGimnasio, R.layout.dialog_menu, null)
 
             val builder = AlertDialog.Builder(this@HomeGimnasio)
             builder.setView(view)
 
-
+            //Muestra la vista
             val dialog = builder.create()
             dialog.show()
             dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
@@ -131,6 +136,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             windowP?.gravity = Gravity.TOP
             window?.attributes = windowP
 
+            //Accedemos a todos los botones para ponerles listeners
             val btnHorarios = view.findViewById<Button>(R.id.btnHorariosDialog)
             val btnSalones = view.findViewById<Button>(R.id.btnSalonesDialog)
             val btnUbicanos = view.findViewById<Button>(R.id.btnUbícanosDialog)
@@ -141,7 +147,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             val btnGaleria = view.findViewById<Button>(R.id.btnGaleria)
             val btnEliminarCuenta = view.findViewById<Button>(R.id.eliminarCuenta)
             val btnPerfil = view.findViewById<Button>(R.id.btnPerfil)
-
+            //Listeners de los botones en los cuales cada uno te manda a la respectiva pantalla
             btnHorarios.setOnClickListener {
                 startActivity(Intent(this, horarios::class.java))
 
@@ -155,6 +161,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             btnVerPaquetes.setOnClickListener {
                 startActivity(Intent(this, PaquetesActivity::class.java))
             }
+            //El boton de logout te regresa a la pantalla de login y borra los shared preferences
             btnLogout.setOnClickListener {
                 startActivity(Intent(this, LoginActivity::class.java))
                 prefs.wipe()
@@ -175,6 +182,8 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                 startActivity(Intent(this, Perfil::class.java))
             }
         }
+
+        //Pone el nombre del usuario
         binding.nombreTv.setText(prefs.getName())
     }
 
@@ -190,11 +199,13 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             override fun onPageSelected(position: Int) {
                 binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
                 if (position == 0){
+                    //Si esta en el tab 1 se hace visible la imagen de fondo, se quita el icono del calendario y los textos del nombre y bienvenido se hacen blancos
                     binding.nombreTv.setTextColor(Color.parseColor("#FFFFFF"))
                     binding.BienvenidoTv.setTextColor(Color.parseColor("#FFFFFF"))
                     binding.imagenChica.visibility = View.VISIBLE
                     binding.calendarioIB.visibility = View.GONE
                 }else{
+                    //Si esta en los demas, se quita la imagen de la chica, se cambian los colores de los textos
                     binding.BienvenidoTv.setTextColor(Color.parseColor("#000000"))
                     binding.nombreTv.setTextColor(Color.parseColor("#961A1A"))
                     binding.imagenChica.visibility = View.INVISIBLE
@@ -203,7 +214,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                 }
             }
         })
-
+        //Listener del cambio de tabs en la pantalla
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
 
             override fun onTabSelected(tab: TabLayout.Tab) {
@@ -219,7 +230,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
 
         })
     }
-
+    //LLamada a las clases reervada para que se muestren en el calendairo
     private fun llamadaApi(){
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -240,7 +251,10 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                 val arrayJson = objeto.getJSONArray("CLASES_RESERVADAS")
                 val objetoindice1 = arrayJson.getJSONObject(0)
                 if (objetoindice1.getString("CIA") != "No Hay Clases registradas"){
+                    //Si el CIA no es No hay clases reservadas
+                    //Primero se vacia la lista para llenarse
                     listaClases.clear()
+                    //Se guardan las variables de todas las clases
                     for (i in (0 until arrayJson.length())){
                         val objeto = arrayJson.getJSONObject(i)
                         var CIA = objeto.getString("CIA")
@@ -250,8 +264,10 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
                         val fecha = objeto.getString("CLASE_DIA")
                         val  idR = objeto.getString("RESERVA_ID")
                         val claseResponsable = objeto.getString("CLASE_RESPONSABLE")
+                        //Dependiendo de que maestro regrese la clase, esta se crea con con su nombre y su foto
                         when (claseResponsable) {
                             "LAURA"->{
+                                //Si es laura, se añade con laura en el nomnre del maestro y se pone la foto de laura, las clases que tienen el valor 1 en mostrar se mostraran en la lista
                                 listaClases.add(i, clasesReservadas("Laura", horaClase, R.drawable.laura1, "$nombreClase", idClase, fecha,idR,1))
                             }"OLGA BELICHKO"->{
                             listaClases.add(i, clasesReservadas("Olga Belichko", horaClase, R.drawable.olga, "$nombreClase", idClase, fecha,idR,1))
@@ -269,6 +285,7 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
 
                         }
                     }
+                    //Busca todas las fechas en las clases y decora los dias en el calendario
                     for (i in (0 until listaClases.size)){
                         println(listaClases[i].fecha)
                         val fecha = listaClases[i].fecha
@@ -294,7 +311,9 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             }
         }
     }
-
+    //Cuando se selecciona una fecha en el calendario, compara la fecha con las fechas de las clases,
+    // y las clases que no cincidan conn la fecha que se selecciono en el calendario se cambiara el valor de mostrar a 0 y
+    // asi solo se mostraran las que tengan la fecha seleccionada
     override fun onDateSelected(p0: MaterialCalendarView, p1: CalendarDay, p2: Boolean) {
         val delim2 = "}"
         val delim1 = "{"
@@ -304,6 +323,8 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
         val year = list[1]
         val month = list[2]
         val day = list[3]
+        //Se hace un formato de la fecha seleccionada para que tenga el mismo
+        // formato con el que llegan las clases del programa de comunicación
         var fechaSelec: String
         if (day.toInt() >= 10 && month.toInt() >= 10){
             fechaSelec = "$day/$month/$year"
@@ -315,23 +336,29 @@ class HomeGimnasio : AppCompatActivity(), OnDateSelectedListener {
             fechaSelec = "$day/0$month/$year"
         }
         println(listaClases.size)
+        //Se compara la fecha seleccionada con todas las fechas de las clases
         for (i in (0 until listaClases.size)){
             val delim = "/"
             val list = listaClases[i].fecha.split(delim)
             val ano = list[2]
             val dia = list[0]
             val mes = list[1]
+            //Se formatea la fecha de las clases para que tenga el mismo formato de las fechas del calendario
             val fechaClases = "$dia/$mes/20$ano"
             println(fechaClases)
             println(fechaSelec)
+            //Si la fecha de seleccionada y la fecha de la clase es diferente, se cambia su valor de mostrar a 0 y ya no se muestra
             if (fechaSelec != fechaClases){
                 listaClases[i].mostrar = 0
             }else{
                 listaClases[i].mostrar = 1
             }
         }
-        println(listaClases)
+        //La lista con los nuevos valores de las clases que se muestran  se añade al view model y asi cambian las clases que se muestran
+        //println(listaClases)
         clasesReservadasViewModel.addClases(listaClases)
+        //Se deja de ver el calendario cuando una fecha se selecciona
+
         binding.calendarView.visibility = View.GONE
         binding.viewcalendario.visibility = View.GONE
         binding.viewblnca.visibility = View.GONE

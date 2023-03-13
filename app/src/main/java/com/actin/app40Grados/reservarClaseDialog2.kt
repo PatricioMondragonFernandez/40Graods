@@ -57,11 +57,11 @@ class reservarClaseDialog2(private val Clase: clasesSemana): AppCompatDialogFrag
                                     Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
                                     //createNotificationChannel()
                                     //scheduleNotification()
-                                }else if(msg == "El Registro se guardo correctamente El usuario no cuenta con paquete asignado"){
-                                    Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
-                                }else if(msg == "El Registro se guardo correctamente El ultimo paquete registrado ha expirado") {
-                                    Toast.makeText(context, "El Registro se guardo correctamente El ultimo paquete registrado ha expirado", Toast.LENGTH_LONG).show()
-                                } else if(msg == "El Registro se guardo correctamente El tipo de salon de la clase no concuerda con el salon del paquete"){
+                                }else if(msg == "El usuario no cuenta con paquete asignado"){
+                                    Toast.makeText(context, "No cuentas con un paquete asignado.", Toast.LENGTH_SHORT).show()
+                                }else if(msg == "El ultimo paquete registrado ha expirado") {
+                                    Toast.makeText(context, "El ultimo paquete registrado ha expirado", Toast.LENGTH_LONG).show()
+                                } else if(msg == "El tipo de salon de la clase no concuerda con el salon del paquete"){
                                     Toast.makeText(context, "El Registro se guardo correctamente El tipo de salon de la clase no consuerda con el salón del paquete", Toast.LENGTH_LONG).show()
 
 

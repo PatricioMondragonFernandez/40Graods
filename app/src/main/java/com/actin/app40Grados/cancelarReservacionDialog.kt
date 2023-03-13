@@ -46,6 +46,8 @@ class cancelarReservacionDialog(private val Clase: clasesReservadas): AppCompatD
                 val sfd = SimpleDateFormat("dd/MM/yy")
                 val fecha = Clase.fecha
                 val currentDate = sfd.format(Date())
+                println(fecha)
+                println(currentDate)
 
                 if (horaClase >= 12){
                     if (fecha == currentDate && horaClase - 8 < hora ){

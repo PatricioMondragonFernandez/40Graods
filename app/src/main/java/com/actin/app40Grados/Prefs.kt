@@ -1,6 +1,6 @@
 package com.actin.app40Grados
 import android.content.Context
-
+//Shared preferences de los datos del usuario
 class Prefs(val context: Context) {
     val SHARED_NAME = "Mydtb"
     val SHARED_USERNAME = "username"

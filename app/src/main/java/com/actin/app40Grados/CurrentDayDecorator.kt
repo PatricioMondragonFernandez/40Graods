@@ -8,6 +8,7 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 
 class CurrentDayDecorator(context: Activity?, currentDay: CalendarDay) : DayViewDecorator {
+    //clase para añadirle decoradores en a los dias en el calendario
     private val drawable: Drawable?
     var myDay = currentDay
     override fun shouldDecorate(day: CalendarDay): Boolean {

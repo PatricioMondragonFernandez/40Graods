@@ -25,8 +25,11 @@ class NuestrasClases : AppCompatActivity() {
         binding.btnAntiGravityN.width = getWidthButtons()
         binding.btnPowerWheel.width = getWidthButtons()
 
+        //Comienza este boton como gris porque es el que esta seleccionado cuando la pantalla se crea
         binding.btnHotVinyasa.backgroundTintList = getColorStateList(android.R.color.darker_gray)
-
+        //Se hace listener de todos los botones, dentro de los listeners se llama la fincion cambiaraspectobotones para que todos se hagan blancos
+        //despues el seleccionado se hace gris, despues se le asigna su imagen correspondiente, y por ultimo se le añade su descripcion al
+        // textview asi funcionan todos los listeners de los botones
         binding.btnHatha.setOnClickListener{
             cambiarAspectoBtns()
             binding.btnHatha.backgroundTintList = getColorStateList(android.R.color.darker_gray)
@@ -84,12 +87,14 @@ class NuestrasClases : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     private fun cambiarAspectoBtns(){
+        //Funcion que cambia el color de los botones a blanco
         val array = arrayOf(binding.btnYogaKids, binding.btnBikram, binding.btnHotVinyasa, binding.btnHotTRX, binding.btnAntiGravityN, binding.btnYogaWheel, binding.btnPowerWheel, binding.btnHatha)
         for (i in (0 until array.size)){
             array[i].backgroundTintList= getColorStateList(android.R.color.white)
             }
         }
-
+    //Funcion que le saigna el tamaño a los botones dependiendo del grosor
+    // de la pantalla, se añaden de tal forma que queden dos visibles cuando se crea la pantalla
     private fun getWidthButtons(): Int{
         if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.R){
             val windowMetrics = this.windowManager.currentWindowMetrics

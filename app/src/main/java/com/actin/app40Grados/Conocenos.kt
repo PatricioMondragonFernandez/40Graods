@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import app40grados.databinding.ActivityConocenosBinding
 
-class Conocenos : AppCompatActivity() {
+class  Conocenos : AppCompatActivity() {
 
     lateinit var binding: ActivityConocenosBinding
 

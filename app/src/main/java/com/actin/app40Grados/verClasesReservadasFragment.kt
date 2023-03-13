@@ -37,26 +37,30 @@ class verClasesReservadasFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_ver_clases_reservadas, container, false)
+        //Recycler view donde se veran las clases
         clasesRecyclerview = view.findViewById<RecyclerView>(R.id.recyclerviewClasesReservadas)
-
+        //Lista de las clases que se recibiran
         listaClases = mutableListOf<clasesReservadas>()
+        //Lista vacia que se añade al recycler si no hay clases reservadas
         listaVacia = mutableListOf<clasesReservadas>()
-
+        //Text view de no hay clase reservadas
         textView = view.findViewById<TextView>(R.id.noClasesTv)
 
         println(prefs.getID())
-
+        //Funcion que regresa las clases reservadas
         llamadaApi()
-
+        //Instancia del view model que observa si ha cambios en la lista de las clases reservadas
         clasesReservadasViewModel.clasesReservadasModel.observe(viewLifecycleOwner, androidx.lifecycle.Observer { lista ->
             clasesRecyclerview.layoutManager = LinearLayoutManager(context)
             clasesRecyclerview.setHasFixedSize(false)
+            //Lista donde se añadiran las clases que tienen mostrar como 1, y esa lista se añadira al view model
             var lista2 = mutableListOf<clasesReservadas>()
             for (i in (0 until lista.size)){
                 if (lista[i].mostrar == 1){
                     lista2.add(lista[i])
                 }
             }
+            //Se añade la lista con las clases que tienen mostrar 1 en el reylcer view
             clasesRecyclerview.adapter = clasesReservadasAdapter(lista2, {onItemSelected(it)})
             textView.visibility = View.GONE
         })
@@ -64,16 +68,19 @@ class verClasesReservadasFragment : Fragment() {
         return view
     }
 
-
+    //Funcion que se le pasa al recycler view cuando hacen click en uno de los elementos
     private fun onItemSelected(Clase: clasesReservadas) {
+        //Abre el dialog de cancelar la clase
         val dialog = cancelarReservacionDialog(Clase)
         dialog.show(parentFragmentManager, "Cancelar Reservacion Dialog")
     }
 
     override fun onResume() {
         super.onResume()
+        //Se hace la llamada de las clases reservadas cada vez que se muestra en pantaalla el fragment para que se actualice constantemente
         llamadaApi()
     }
+    //Funcion que llama las clases que estan reservadas
     private fun llamadaApi(){
         CoroutineScope(Dispatchers.IO).launch{
             try{
@@ -93,7 +100,9 @@ class verClasesReservadasFragment : Fragment() {
                 val objeto = JSONObject(json)
                 val arrayJson = objeto.getJSONArray("CLASES_RESERVADAS")
                 val objetoindice1 = arrayJson.getJSONObject(0)
+                //Si el CIA es diferente a "No hay clases reservadas
                 if (objetoindice1.getString("CIA") != "No Hay Clases registradas"){
+                    //De cada objeto en el arreglo se hacen clases y se agarran las variables para ponerse en los objetos de clae
                     for (i in (0 until arrayJson.length())){
                         val objeto = arrayJson.getJSONObject(i)
                         var CIA = objeto.getString("CIA")
@@ -113,8 +122,10 @@ class verClasesReservadasFragment : Fragment() {
                         println(date)
                         dayString = simpleDateFormat.format(date)
                         println(dayString)
+                        //Dependiendo del maestro, se pone su nombre y su foto
                         when (claseResponsable) {
                             "LAURA"->{
+                                //Si el llega con laura, se añade la clase a la lista con el nombre laura y su imagen
                                 listaClases.add(i, clasesReservadas("Laura", "$horaClase", R.drawable.laura1, "$nombreClase", idClase, fecha,idR, 1))
                             }"OLGA BELICHKO"->{
                             listaClases.add(i, clasesReservadas("Olga Belichko", "$horaClase", R.drawable.olga, "$nombreClase", idClase, fecha,idR, 1))
@@ -135,8 +146,10 @@ class verClasesReservadasFragment : Fragment() {
                         }
                         }
                     }
+                    //Al final se añaden en el view model
                     clasesReservadasViewModel.addClases(listaClases)
                 }else{
+                    //Si el CIA es No hay clases reservadas se añade al view model la lista vacia
                     withContext(Dispatchers.Main){
                         listaClases.clear()
                         clasesReservadasViewModel.addClases(listaVacia)

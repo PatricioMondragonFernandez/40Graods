@@ -27,59 +27,59 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(context)
+        //Se inicializa la variable de mensaje que regresara el api
         msg = ""
+        //Se guarda el cupo y los lugares ocupados de la clase recibida en variables
         val cupo = Clase.cupo.toInt()
         val ocupado = Clase.ocupado.toInt()
-        println(prefs.getID())
+        //println(prefs.getID())
+        //Se crea el dialog
         builder.setTitle("¿Reservar clase?")
+                //Se le pone el mensaje con los datos de la clase recibida
             .setMessage("¿Reservar la clase de ${Clase.tipoDeClase} con el profesor ${Clase.maestro} el dia ${Clase.fecha} ?. Quedan ${cupo - ocupado} lugares.")
+                //Se añade el boton de si y si el usuario lo clickea se hace la siguiente logica
             .setPositiveButton("Si") { dialogInterface: DialogInterface, i: Int ->
-                val calendario = Calendar.getInstance()
-                val tz = TimeZone.getTimeZone("America/Mexico_City")
-                calendario.timeZone = tz
-                val hora = calendario.get(Calendar.HOUR_OF_DAY).toInt()
-                println(hora)
-                val delim = ":"
-                val arreglo = Clase.hora.split(delim)
-                val horaClase = arreglo[0].toInt()
-                println(horaClase)
-                val sfd = SimpleDateFormat("dd/MM/yyyy")
-                val currentDate = sfd.format(Date())
-                    if (cupo - ocupado <= 0){
-                        Toast.makeText(context, "Ya no hay lugares para esta clase.", Toast.LENGTH_SHORT).show()
-                    }else{
-                        llamadaApi()
-                        runBlocking {
-                            launch {
-                                delay(1000)
-                                println("este es el mensaje $msg")
-                                if (msg == "El Registro se guardo correctamente"){
-                                    Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
-                                    //createNotificationChannel()
-                                    //scheduleNotification()
-                                }else if(msg == "El Registro se guardo correctamente El usuario no cuenta con paquete asignado"){
-                                    Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
+                if (cupo - ocupado <= 0){
+                    //si ya no hay lugares se hace un toast que dice que ya no hay lugares
+                    Toast.makeText(context, "Ya no hay lugares para esta clase.", Toast.LENGTH_SHORT).show()
+                }else{
+                    //Si hay lugares se hace una llamada al Api para que se reserve la clase
+                    llamadaApi()
+                    runBlocking {
+                        launch {
+                            delay(1000)
+                            //Este delay es para dar tiempo de que llegue el mensaje
+                            println("este es el mensaje $msg")
+                            //Si el mensaje es este se indica que la clase se registro correctamente
+                            if (msg == "El Registro se guardo correctamente"){
+                                Toast.makeText(context, "Clase registrada correctamente.", Toast.LENGTH_SHORT).show()
+                                //createNotificationChannel()
+                                //scheduleNotification()
+                                //Si este es el mensaje se muestra este toast al usuraio
+                            }else if(msg == "El usuario no cuenta con paquete asignado"){
+                                Toast.makeText(context, "No cuentas con un paquete asignado.", Toast.LENGTH_SHORT).show()
+                                //Si el mensaje es este se mostrara el siguiente toast
+                            }else if(msg == "El ultimo paquete registrado ha expirado"){
+                                Toast.makeText(context, "El ultimo paquete registrado ha expirado", Toast.LENGTH_SHORT).show()
+                                //Si el mensaje es este se mostrara el siguiente toast
+                            }else if(msg == "El tipo de salon de la clase no concuerda con el salon del paquete"){
+                                Toast.makeText(context, "El tipo de salon de la clase no concuerda con el salón del paquete", Toast.LENGTH_LONG).show()
 
-                                }else if(msg == "El Registro se guardo correctamente El ultimo paquete registrado ha expirado"){
-                                    Toast.makeText(context, "El Registro se guardo correctamente El ultimo paquete registrado ha expirado", Toast.LENGTH_SHORT).show()
-
-                                }else if(msg == "El Registro se guardo correctamente El tipo de salon de la clase no concuerda con el salon del paquete"){
-                                    Toast.makeText(context, "El Registro se guardo correctamente El tipo de salon de la clase no consuerda con el salón del paquete", Toast.LENGTH_LONG).show()
-
-                                }else{
-                                    Toast.makeText(context, "No pudo hacerse la reservación es posible que no cuentes con un paquete asignado o ya tengas una reservación para esa clase.", Toast.LENGTH_LONG).show()
-                                }
+                            }else{
+                                Toast.makeText(context, "No pudo hacerse la reservación es posible que no cuentes con un paquete asignado o ya tengas una reservación para esa clase.", Toast.LENGTH_LONG).show()
                             }
                         }
                     }
+                }
             }
+                //Si el usuario presiona el boton de no el dilogo desaparece
             .setNegativeButton("No") { dialogInterface: DialogInterface, i: Int -> }
 
         return builder.create()
     }
 
 
-    private fun scheduleNotification(){
+    /*private fun scheduleNotification(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val intent = Intent( context?.applicationContext, Notificaciones::class.java)
             val title = "Alarma Clase"
@@ -112,10 +112,10 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
             val notificationManager =context?.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
-    }
+    }*/
 
 
-    private fun fecha(): Long{
+    /*private fun fecha(): Long{
         val delimf = "/"
         val delimh = ":"
         val arregloF = Clase.fecha.split(delimf)
@@ -138,12 +138,14 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
         println(calendario.time)
 
         return calendario.timeInMillis
-    }
-
+    }*/
+    //Funcion que hace la llamada para registrar la clase
     private fun llamadaApi(){
         val job = CoroutineScope(Dispatchers.IO).launch {
+            //Se crea el Json con los datos de la clase recibida
             val objeto = JSONObject("{\"REGISTRO_CLASE\":[{\"CIA\":\"${prefs.getCIA()}\", \"ID_CLASE\":\"${Clase.id}\", \"ID_SALON_LUGAR\": \"$idSalonClase\", \"ID_USUARIO\":\"${prefs.getID()}\", \"RESERVA_DIA\":\"${Clase.fecha}\" }]}")
             println(objeto)
+            //Se crea la variable del url, se hace la conexion y se recibe el mensaje
             val url = URL("http://actinseguro.com/booking/abkcom007.aspx")
             val postData = objeto.toString()
 
@@ -170,6 +172,7 @@ class reservarClaseDialog(private val Clase: Clases, private val idSalonClase: S
             val jsonRespuesta = JSONObject(respuesta)
             val respuestaArray = jsonRespuesta.getJSONArray("RESPONSE")
             val objetoArray = respuestaArray.getJSONObject(0)
+            //Se guarda la respuetsa en la variable mensaje
             msg = objetoArray.getString("MSG")
         }
         runBlocking { job.join() }

@@ -45,12 +45,13 @@ class BienvenidoFragment : Fragment() {
         val usuario = prefs.getID()
         //Inicia la matriz de bits
         try {
+            //Crea una instancia del codificador de texto
             val encoder = BarcodeEncoder()
-            //Inicia el bitmap
+            //Inicia el bitmap del codigo qr que se añadira en el image view
             val bitMap = encoder.encodeBitmap( usuario, BarcodeFormat.QR_CODE, 1000, 1000)
             //Poner el Bitmap en el image view
                 imageViewCodigo.setImageBitmap(bitMap)
-            //Inicia el input manager
+            //LLama a la funcion para pasar la imagen del codigo qr a base 64(Aun no se usa)
             encode()
         }catch (e: WriterException){
 
@@ -59,7 +60,7 @@ class BienvenidoFragment : Fragment() {
         llamadaApi()
         return view
     }
-
+    //para pasar la imgagen del codigo qr a base 64(aun no se usa)
     private fun encode(){
         val byteArrayOutputStream = ByteArrayOutputStream()
         val bitmap: Bitmap = imageViewCodigo.drawable.toBitmap()
@@ -70,7 +71,7 @@ class BienvenidoFragment : Fragment() {
 
         //println(imageString)
     }
-
+    //Regresa el paquete que tiene el usuario
     private fun llamadaApi(){
         CoroutineScope(Dispatchers.IO).launch{
             try{
@@ -89,6 +90,7 @@ class BienvenidoFragment : Fragment() {
 
                 val json = datos.toString()
                 println(json)
+                //Agarra el paquete que tiene la person y las clase que le quedan
                 val objeto = JSONObject(json)
                 val arrayJson = objeto.getJSONArray("PAQUETE")
                 val indice1 = arrayJson.getJSONObject(0)
@@ -97,15 +99,18 @@ class BienvenidoFragment : Fragment() {
                 val paquete = indice1.getString("PAQUETE")
                 val vigencia = indice1.getString("CLASE_VIGENCIA")
                 println(json)
+                //Si no hay un paqute registrado se muestra "No tienes un paquete registrado" en el textview
                 if (CIA == "No Hay paquete registrado"){
                     activity?.runOnUiThread(java.lang.Runnable{
                         textViewClasesRestantes.text = "No tienes un paquete registrado."
                     })
+                    //Si el paquete es de auto pago solo se muestra el nombre del paquete
                 }else if(clasesRestantes == "Paquete ilimitado o de autopago"){
                     activity?.runOnUiThread(java.lang.Runnable{
                         textViewClasesRestantes.text = "$paquete"
                     })
                 }else{
+                    //Si es un paquete diferente se muestran las clases restante y el nombre del pquete
                     activity?.runOnUiThread(java.lang.Runnable{
                         textViewClasesRestantes.text = "Te quedan $clasesRestantes clases de tu Paquete: $paquete"
                     })

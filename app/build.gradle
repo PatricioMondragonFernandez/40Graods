@@ -13,9 +13,8 @@ android {
         applicationId "com.actin.app40Grados"
         minSdk 21
         targetSdk 32
-        versionCode 8
-        versionName "1.6"
-
+        versionCode 10
+        versionName "1.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

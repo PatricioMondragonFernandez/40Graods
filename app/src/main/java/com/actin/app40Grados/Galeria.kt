@@ -7,7 +7,7 @@ import android.view.Gravity
 import android.view.View
 import app40grados.R
 import app40grados.databinding.ActivityGaleriaBinding
-
+//Pantalla de la galeria de fotos
 class Galeria : AppCompatActivity() {
 
     private lateinit var binding: ActivityGaleriaBinding
@@ -20,7 +20,8 @@ class Galeria : AppCompatActivity() {
         binding.btnCancelGaleria.setOnClickListener {
             startActivity(Intent(this, HomeGimnasio::class.java))
         }
-
+        //Listener de la imagen 1, se abre un dialog con la imagen para que se vea mas grande,
+        // asi funcionan todos los listeners de las imagenes
         binding.imagen1.setOnClickListener {
             val view = View.inflate(this@Galeria, R.layout.d_imagen1, null)
 
